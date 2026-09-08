@@ -61,4 +61,4 @@ Mark a layer `N/A` only with a reason. A claimed benefit is incomplete when its 
 
 ## 7. Make innovation falsifiable
 
-Record: baseline defect; changed mechanism; causal path to the expected benefit; principal failure risk; minimum decisive test; numeric or ordinal decision threshold; and discard/fallback rule. If the threshold is missed, remove the mechanism or report it as a failed experiment—not as innovation.
+Use [innovation design](innovation-design.md) for the evidence ladder, screening and falsifiable record. For a chain, the record must also name the changed handoff, propagate its uncertainty, and test both the affected stage and the end-to-end decision.

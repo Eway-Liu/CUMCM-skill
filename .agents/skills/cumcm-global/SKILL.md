@@ -5,7 +5,7 @@ description: Use when a CUMCM or similar mathematical modeling competition task 
 
 # CUMCM Global Orchestrator
 
-Coordinate the work; do not replace the specialist Skills. Correct problem abstraction and traceable evidence outrank algorithm sophistication.
+Coordinate specialists. Correct abstraction and traceable evidence outrank algorithm sophistication.
 
 ## Start gate
 
@@ -35,7 +35,7 @@ Use structure-aware corpus retrieval only as evidence support: `../cumcm/scripts
 3. No completion claim without a validation plan and executed checks where data permit.
 4. No answer is complete until results are interpreted in the real problem.
 5. No key paper number without a traceable program output or cited source.
-6. No innovation claim unless the added mechanism fixes a named baseline defect and is tested.
+6. No innovation claim unless the added mechanism fixes a named baseline defect, has a predefined discard rule, and is tested; wording must not exceed its evidence level.
 7. No figure without a specific question it answers.
 
 When a gate fails, state the missing evidence and return to the producing stage. Do not paper over the gap with prose.

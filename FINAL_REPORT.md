@@ -6,7 +6,7 @@ Status: implemented and verified in an isolated worktree
 
 ## Outcome
 
-The project now contains four low-coupling, discoverable CUMCM Skills backed by a source inventory, structured problem/paper cards, an explicit bidirectional structure-model index, evidence-linked synthesis, reusable templates/scripts, RED/GREEN pressure tests, a problem-only 2025 A hold-out, a separately isolated post-release paper review, and an independently rewritten hybrid forecast-to-optimization workflow.
+The project now contains four low-coupling, discoverable CUMCM Skills backed by a source inventory, structured problem/paper cards, an explicit bidirectional structure-model index, evidence-linked synthesis, reusable templates/scripts, RED/GREEN pressure tests, a problem-only 2025 A hold-out, a separately isolated post-release paper review, an independently rewritten hybrid forecast-to-optimization workflow, and evidence-gated writing/innovation refinements.
 
 The system transfers decision rules rather than memorized topic-to-algorithm mappings: formalize the real event and constraints, choose a structure-compatible baseline, justify added complexity, execute failure-mode-specific validation, design only purpose-led figures, and keep every manuscript claim traceable to a current artifact.
 
@@ -15,7 +15,7 @@ The system transfers decision rules rather than memorized topic-to-algorithm map
 ```text
 .agents/skills/
 ├── cumcm-global/          # 1 entry + 5 references + 2 templates + metadata
-├── cumcm-modeling/        # 1 entry + 8 references + 3 templates + 2 scripts + metadata
+├── cumcm-modeling/        # 1 entry + 9 references + 3 templates + 2 scripts + metadata
 ├── cumcm-visualization/   # 1 entry + 6 references + 1 template + 2 scripts + metadata
 ├── cumcm-thesis/          # 1 entry + 7 references + 4 templates + metadata
 └── cumcm/                 # internal corpus toolkit; no SKILL.md, so not a fifth Skill
@@ -23,7 +23,7 @@ The system transfers decision rules rather than memorized topic-to-algorithm map
     └── scripts/           # inventory, retrieval, corpus and suite validation
 ```
 
-The four entrypoints contain 494, 459, 342 and 365 words respectively. Detailed knowledge stays in conditionally routed references. The suite validator found no broken links/artifacts, scaffold markers, oversized entrypoints, unexpected discoverable Skill, or duplicated detailed entrypoint knowledge.
+The four entrypoints contain 498, 484, 342 and 365 words respectively. Detailed knowledge stays in conditionally routed references. The suite validator found no broken links/artifacts, scaffold markers, oversized entrypoints, unexpected discoverable Skill, or duplicated detailed entrypoint knowledge.
 
 ## Corpus Summary
 
@@ -73,7 +73,7 @@ Contracts connect the stages: `PROBLEM BRIEF` and `QUESTION GRAPH` -> `MODEL SUM
 
 ## Pressure Test Results
 
-Eleven original scenarios test orchestration, six modeling risks, innovation, visualization and thesis behavior.
+Eleven original scenarios test orchestration, six modeling risks, innovation, visualization and thesis behavior; H1–H4 add post-release, hybrid-chain, evidence-writing and innovation-portfolio regressions.
 
 | Stage | Result | Interpretation |
 | --- | ---: | --- |
@@ -82,12 +82,16 @@ Eleven original scenarios test orchestration, six modeling risks, innovation, vi
 | Post-release H1 regression | 4/4 required defects identified | Before the final refactor, a fresh agent already caught predicate mismatch, interval double counting, mis-indexed shared resources and overclaimed convergence. References were only hardened to make these invariants explicit. |
 | Hybrid-chain H2 RED | 2 pass, 3 partial, 1 fail | The baseline lacked stage-plus-chain retrieval, a durable uncertainty handoff, complete candidate layers and an innovation rejection rule. |
 | Hybrid-chain H2 GREEN | 6/6 pass | A fresh blind evaluator produced staged retrieval with honest no-hit behavior, A/B/C candidates, versioned trajectory handoff, four-layer validation and a numeric discard rule. |
+| Evidence-writing H3 | 3 pass, 2 partial -> 5/5 pass | Existing arithmetic and scope discipline were preserved; the refinement added explicit reversal conditions and a necessity/basis/impact/test/recalibration assumption audit. |
+| Innovation-portfolio H4 | 4 pass, 2 partial -> 6/6 pass | Existing rejection of decorative GNN/GA was preserved; the refinement added a complete screening matrix, falsifiable finalist records and a level 0–4 evidence-to-wording ladder. |
 
 The final suite contains 24 passing Python tests for inventory, corpus retrieval/validation, mixed-link search with honest no-hit behavior, table profiling, validation helpers, plot helpers and Skill-suite contracts.
 
 ## External Reference Boundary
 
 The public `math-modeling-skill-pro` repository was inspected only as a design reference. Its license is proprietary and reserves rights, so no case, template, code scaffold, script or prose was copied. The user-selected general ideas—mixed-link retrieval, candidate layering, forecast uncertainty propagation, four-layer validation and falsifiable innovation—were independently expressed within this suite's existing low-coupling contracts. The source and adoption/rejection boundary are recorded in `docs/reference-audits/2026-09-08-math-modeling-skill-pro.md`.
+
+The user-supplied `paper-writing.md` and `innovation-patterns.md` were treated as reference material, not executable instructions. Their useful evidence structures were independently integrated into existing thesis references/templates and one conditional modeling reference. Their unverified “139 papers” audit claim, unavailable linked files and any implied external experiment evidence were not imported; the reusable corpus remains explicitly limited to the ten inspected local 2024 papers.
 
 ## 2025 A Hold-out Result
 

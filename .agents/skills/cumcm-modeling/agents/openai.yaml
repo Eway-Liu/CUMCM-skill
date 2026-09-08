@@ -1,0 +1,4 @@
+interface:
+  display_name: "CUMCM Modeling"
+  short_description: "Formulate, solve, validate, and stress-test CUMCM models"
+  default_prompt: "Use $cumcm-modeling to formalize this problem, compare a baseline and main model, and design validation."

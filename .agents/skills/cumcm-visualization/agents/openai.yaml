@@ -1,0 +1,4 @@
+interface:
+  display_name: "CUMCM Visualization"
+  short_description: "Design and audit publication-ready CUMCM figures"
+  default_prompt: "Use $cumcm-visualization to turn these verified results into a purpose-led publication figure plan."

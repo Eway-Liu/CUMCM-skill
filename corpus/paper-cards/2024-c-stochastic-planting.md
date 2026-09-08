@@ -40,3 +40,62 @@ tags: [allocation-optimization, crop-planning, linear-programming, greedy-baseli
 - [unverified] not confirmed: portable expected-benefit values, scenario count, and units. [ev-paper-2024-c-stochastic-planting, pp. 1, 15-22]
 - [inferred] An explicit greedy comparator for the same constrained allocation problem is a useful feature. [ev-paper-2024-c-stochastic-planting, pp. 1-3]
 - [inferred] Compare stochastic optimization to a baseline only under identical feasibility and surplus accounting; otherwise performance differences confound model structure with conventions. [ev-paper-2024-c-stochastic-planting, pp. 1-3]
+
+## Structured question records
+
+Problem Type: [inferred] constrained linear allocation with stochastic scenarios and crop/market interaction extensions.
+
+### Q1
+
+- Goal: [observed] Produce feasible planting plans for waste and half-price surplus cases.
+- Variables: [observed] Crop area by plot, season, and year plus production, sales, and profit.
+- Assumptions: [observed] Land/rotation/legume rules and management-concentration parameters define feasibility.
+- Data Processing: [unverified] Raw workbook cleaning and imputation were not confirmed.
+- Baseline: [observed] Greedy strategy under the same stated surplus and feasibility rules.
+- Model: [observed] Constrained linear-program allocation.
+- Algorithm: [observed] Linear-program solver compared with greedy construction.
+- Validation: [inferred] Replay all constraints and compare LP/greedy revenue under identical accounting.
+- Visualization: [observed] Solver-versus-greedy figures/tables provide a computational comparison.
+- Main Result: [unverified] Expected-benefit values and full plans were not independently reproduced. [ev-paper-2024-c-stochastic-planting, pp. 1-3]
+
+### Q2
+
+- Goal: [observed] Optimize/evaluate planting plans under uncertain demand, yield, cost, and price.
+- Variables: [observed] Random parameter sequences, crop areas, scenario outcomes, and expected benefit.
+- Assumptions: [observed] Normal random sequences represent the paper's uncertain parameters.
+- Data Processing: [unverified] Normality diagnostics, scenario count, and probability discretization were not confirmed.
+- Baseline: [inferred] Q1 nominal feasible plan evaluated on the same scenarios.
+- Model: [observed] Stochastic scenario allocation and perturbation/evaluation.
+- Algorithm: [observed] Scenario generation followed by constrained solution/evaluation.
+- Validation: [observed] A separate scenario-result analysis exists; systematic sensitivity and out-of-sample checks are unverified.
+- Visualization: [observed] Later outputs support scenario-plan analysis.
+- Main Result: [unverified] Expected benefits and preferred stochastic plan were not independently reproduced. [ev-paper-2024-c-stochastic-planting, pp. 15-22]
+
+### Q3
+
+- Goal: [observed] Include crop substitution/complementarity and sales-price-cost relationships.
+- Variables: [observed] Relationship parameters, random inputs, crop areas, and scenario outcomes.
+- Assumptions: [observed] Stated substitution/complement and market relations govern the extension.
+- Data Processing: [unverified] Correlation estimation and empirical calibration were not confirmed.
+- Baseline: [inferred] Q2 stochastic model with relationship terms removed.
+- Model: [observed] Interaction-aware stochastic allocation.
+- Algorithm: [observed] Perturbation and evaluation of feasible plans under the expanded relations.
+- Validation: [inferred] Use a relation-free ablation and vary relationship strengths/distributions.
+- Visualization: [observed] Later outputs support interaction-scenario result analysis.
+- Main Result: [unverified] Interaction-driven benefit changes were not independently reproduced. [ev-paper-2024-c-stochastic-planting, pp. 15-22]
+
+## Strong Points
+
+- [inferred] An explicit greedy comparator provides a simple same-problem baseline for the constrained solver.
+
+## Weak Points
+
+- [unverified] Distribution diagnostics, scenario count, correlation calibration, and independent outcome validation were not confirmed.
+
+## Transferable Patterns
+
+- [expert-rule] Compare stochastic and deterministic methods only under identical constraints and accounting, then isolate scenario and relation layers with ablations.
+
+## Problem-Specific Tricks
+
+- [observed] Management-concentration parameters and the supplied crop substitution/complement assumptions belong to the 2024 C case.

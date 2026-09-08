@@ -15,7 +15,6 @@ Classify the edge:
 - **soft dependency**: a shared artifact can be reused but the question remains independently solvable;
 - **independent**: no substantive artifact is shared.
 
-Represent the graph in text or Mermaid only when it clarifies branching. For each edge, name the artifact that flows across it. A bare `Q1 -> Q2` arrow is insufficient.
+Represent the graph in text or Mermaid only when it clarifies branching. For each hard edge, name the producer, consumer, artifact path/schema/version, temporal or spatial grain, units, uncertainty representation, and availability/leakage boundary. A bare `Q1 -> Q2` arrow is insufficient. Freeze these fields as an `UPSTREAM HANDOFF` before the consumer model is implemented.
 
 Use the graph to schedule work and prevent two questions from silently using different parameter estimates, data versions, or units.
-

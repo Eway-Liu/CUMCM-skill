@@ -40,3 +40,75 @@ tags: [quality-control, acceptance-sampling, decision-tree, monte-carlo, ant-col
 - [unverified] not confirmed: transferable sample-size thresholds, profit values, and units; the reported outputs were not independently replicated. [ev-paper-2024-b-aco-ga-monte-carlo, pp. 1, 5-7]
 - [inferred] Retaining a transparent decision-tree baseline alongside stochastic/metaheuristic search is a useful feature. [ev-paper-2024-b-aco-ga-monte-carlo, pp. 3, 7-9]
 - [inferred] Use metaheuristics only after a smaller exact decision-state baseline establishes the accounting and feasibility logic. [ev-paper-2024-b-aco-ga-monte-carlo, pp. 3, 7-9]
+
+## Structured question records
+
+Problem Type: [inferred] acceptance sampling plus stochastic multistage discrete decision optimization.
+
+### Q1
+
+- Goal: [observed] Design an acceptance-sampling rule for a nominal defect rate.
+- Variables: [observed] Sample size, acceptance/rejection threshold, observed defects, and confidence requirement.
+- Assumptions: [inferred] Sampled item outcomes represent the supplied lot defect behavior.
+- Data Processing: [unverified] No raw-data cleaning is reported; defect observations are treated as sampling outcomes.
+- Baseline: [inferred] Direct binomial acceptance/rejection probability calculation.
+- Model: [observed] Acceptance-sampling decision under defect-rate uncertainty.
+- Algorithm: [observed] The paper includes Monte Carlo treatment in its sampling/decision framework.
+- Validation: [inferred] Verify both producer/consumer error constraints and compare simulation with exact tail probabilities.
+- Visualization: [unverified] Exact sample-size/error plot encoding was not confirmed.
+- Main Result: [unverified] Transferable sample-size thresholds were not independently replicated. [ev-paper-2024-b-aco-ga-monte-carlo, pp. 1, 5-7]
+
+### Q2
+
+- Goal: [observed] Choose component/final inspections and disassembly for the six small production cases.
+- Variables: [observed] Binary inspect/disassemble actions and expected profit/cost components.
+- Assumptions: [observed] Defect and return/disassembly behavior follows the stated decision branches.
+- Data Processing: [unverified] No empirical cleaning procedure is reported.
+- Baseline: [observed] Enumerated decision tree with expected-profit accounting.
+- Model: [observed] Binary stage decisions with return and disassembly feedback.
+- Algorithm: [observed] Decision-tree enumeration/evaluation.
+- Validation: [inferred] Reconcile every branch probability and cost, and enumerate all small feasible policies.
+- Visualization: [observed] Decision-tree figures organize the policy branches.
+- Main Result: [unverified] Case-level profit values and selected policies were not independently reproduced. [ev-paper-2024-b-aco-ga-monte-carlo, pp. 1, 3, 7-9]
+
+### Q3
+
+- Goal: [observed] Scale inspection/disassembly optimization to the multistage eight-component process.
+- Variables: [observed] Binary actions over components, intermediates, and finished product plus state-dependent profit.
+- Assumptions: [observed] Feedback transitions preserve the modeled component states and accounting.
+- Data Processing: [unverified] No raw-data preprocessing is reported.
+- Baseline: [inferred] The Q2 exact decision-state formulation on a reduced instance.
+- Model: [observed] Larger multistage decision graph.
+- Algorithm: [observed] Ant-colony and genetic-algorithm search are used as scale-up methods.
+- Validation: [unverified] Equal-budget repeated seeds, feasibility rate, and exact-gap evidence were not confirmed.
+- Visualization: [inferred] Policy-flow and profit-comparison views are decision-relevant; exact encodings are unverified.
+- Main Result: [unverified] The selected large-process strategy was not independently replicated. [ev-paper-2024-b-aco-ga-monte-carlo, pp. 1, 7-9]
+
+### Q4
+
+- Goal: [observed] Propagate sampled defect-rate uncertainty into the Q2/Q3 decisions.
+- Variables: [observed] Defect scenarios, policy choices, and scenario profit.
+- Assumptions: [observed] The paper uses a 3-sigma scenario treatment.
+- Data Processing: [observed] Sampled defect scenarios are generated for comparison.
+- Baseline: [inferred] Nominal-rate policy evaluated under the same scenarios.
+- Model: [observed] Scenario-based stochastic decision comparison.
+- Algorithm: [observed] Monte Carlo evaluation combined with the stated search procedures.
+- Validation: [observed] Decision changes are examined across 3-sigma scenarios; distribution calibration remains unverified.
+- Visualization: [observed] Later result figures/tables compare scenario outcomes.
+- Main Result: [unverified] Robust policy/profit values were not independently reproduced. [ev-paper-2024-b-aco-ga-monte-carlo, pp. 20-22]
+
+## Strong Points
+
+- [inferred] A transparent small-case decision tree remains available as an accounting baseline before larger stochastic search.
+
+## Weak Points
+
+- [unverified] Convergence, repeated-seed dispersion, exact-gap evidence, and empirical calibration of the 3-sigma scenarios were not confirmed.
+
+## Transferable Patterns
+
+- [expert-rule] Validate probability/cost accounting by exact enumeration on a small instance before applying stochastic or metaheuristic search at scale.
+
+## Problem-Specific Tricks
+
+- [observed] The exact inspect/disassemble branches, return loop, six scenarios, and eight-component process graph belong to the 2024 B production structure.

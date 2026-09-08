@@ -17,6 +17,8 @@ Create a `PROBLEM BRIEF` and `QUESTION GRAPH` using [contracts](references/contr
 
 Read [question dependencies](references/question-dependency.md) when questions share parameters, data, code, or outputs. Use [competition workflow](references/competition-workflow.md) for a full contest or when sequencing is unclear.
 
+When the graph has a hard model-to-model edge, require a named `UPSTREAM HANDOFF` and route its design to [hybrid model chains](../cumcm-modeling/references/hybrid-model-chains.md). Use stage-plus-chain retrieval only when historical evidence is relevant; the orchestrator owns routing, while `cumcm-modeling` owns propagation and validation details.
+
 ## Routing
 
 - Invoke `cumcm-modeling` for data audit, mathematical formulation, model selection, algorithms, Python implementation, validation, sensitivity, robustness, or uncertainty.
@@ -24,7 +26,7 @@ Read [question dependencies](references/question-dependency.md) when questions s
 - Invoke `cumcm-thesis` only with verified problem, model, result, and figure inputs; it must not recompute or invent them.
 - Keep the current stage when the user requests a focused task. Do not restart the entire workflow unnecessarily.
 
-Use structure-aware corpus retrieval only as evidence support: `../cumcm/scripts/search_cases.py`. A retrieved case is an analogy to inspect, never a model prescription. Read `../cumcm/references/excellent-paper-patterns.md` or `a-problem-patterns.md` only when historical evidence is relevant.
+Use structure-aware corpus retrieval only as evidence support: `../cumcm/scripts/search_cases.py`. A retrieved case is an analogy to inspect, never a model prescription. Read the [bidirectional structure-model index](../cumcm/references/bidirectional-index.md) when candidate routing needs corpus-backed use/avoid conditions. Read `../cumcm/references/excellent-paper-patterns.md` or `a-problem-patterns.md` only when historical evidence is relevant.
 
 ## Hard gates
 
@@ -46,4 +48,3 @@ Before final delivery, produce `FINAL CONSISTENCY REVIEW`. Check model vs code, 
 
 - Initial analysis: [problem analysis](templates/problem-analysis.md)
 - End-to-end execution: [competition plan](templates/competition-plan.md)
-

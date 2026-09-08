@@ -22,10 +22,23 @@ Required validation evidence:
 
 ```text
 Nodes: Q1 ... Qn
-Edges: upstream -> downstream: transferred artifact
+Edges: producer -> consumer: transferred artifact, schema/version, units/grain, uncertainty, availability/leakage boundary
 Shared data/parameters/code:
 Independent branches:
 Execution order:
+```
+
+## UPSTREAM HANDOFF
+
+```text
+Producer stage and consumer stage:
+Artifact path, schema and version:
+Point output:
+Uncertainty representation, scenarios and weights:
+Units and temporal/spatial grain:
+Availability and leakage boundary:
+Mapping to downstream variables, constraints or objective:
+Fallback and failure behavior:
 ```
 
 ## MODEL SUMMARY
@@ -37,7 +50,10 @@ Assumptions:
 Baseline:
 Main model and equations:
 Algorithm and parameters:
-Validation performed:
+Upstream handoffs consumed:
+Output artifact, schema and version:
+Uncertainty output:
+Validation performed, including end-to-end evidence:
 Sensitivity/robustness performed:
 Saved result artifacts:
 Key results:
@@ -66,4 +82,3 @@ Units/symbols/parameters:
 Conclusion evidence:
 Unresolved blockers or limitations:
 ```
-

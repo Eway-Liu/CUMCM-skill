@@ -15,4 +15,7 @@
 | A resource limit is indexed inside each target | Expand a small instance and sum across every consumer of the shared resource |
 | One flat stochastic trace proves optimality or sensitivity | Treat it as one-run stopping behavior; require baselines, seeds, bounds and separate perturbations |
 | A+B is called innovation | Name a defect and isolate the added mechanism by ablation |
+| A hybrid chain is retrieved with one broad topic query | Search every stage's structure and the whole chain; preserve no-hit results |
+| A point forecast is passed downstream as truth | Pass calibrated trajectory scenarios or a justified uncertainty set and retain the point chain as baseline |
+| Innovation has no rejection rule | Predefine the failure risk, decisive test, threshold and discard/fallback action |
 | Result is mathematically valid but not interpretable | Translate magnitude, units, constraints and validity range back to reality |

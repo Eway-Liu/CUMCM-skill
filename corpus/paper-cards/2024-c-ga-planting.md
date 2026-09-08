@@ -40,3 +40,62 @@ tags: [allocation-optimization, crop-planning, genetic-algorithm, uncertainty, c
 - [unverified] not confirmed: numerical profits, comparative superiority, and units as transferable results. [ev-paper-2024-c-ga-planting, p. 1]
 - [inferred] The staged extension from feasible allocation to weather uncertainty and crop interactions is a useful feature. [ev-paper-2024-c-ga-planting, pp. 1-3]
 - [inferred] Treat assumed substitute/complement relations as scenario inputs unless external data identifies and validates their magnitude. [ev-paper-2024-c-ga-planting, pp. 1-3]
+
+## Structured question records
+
+Problem Type: [inferred] multi-period constrained crop allocation with weather and crop-interaction scenarios.
+
+### Q1
+
+- Goal: [observed] Optimize crop areas for waste and half-price surplus-sales cases.
+- Variables: [observed] Area by crop, plot, season, and year plus production, sales, and profit.
+- Assumptions: [observed] Land, rotation, legume, concentration, season, and crop-environment constraints hold.
+- Data Processing: [unverified] Raw workbook cleaning and imputation were not confirmed.
+- Baseline: [inferred] Deterministic feasible allocation under explicit surplus accounting.
+- Model: [observed] Constrained multi-period profit maximization for two market cases.
+- Algorithm: [observed] Genetic algorithm.
+- Validation: [inferred] Replay all land/rotation/legume/season constraints and compare with an exact or relaxed bound where possible.
+- Visualization: [observed] Early figures/tables organize the constraints and scenario formulations.
+- Main Result: [unverified] Numerical plan and profit values were not independently reproduced. [ev-paper-2024-c-ga-planting, pp. 1-3]
+
+### Q2
+
+- Goal: [observed] Account for market changes and weather-driven yield uncertainty.
+- Variables: [observed] Crop areas, demand/price/cost/yield scenarios, profit, and profit volatility.
+- Assumptions: [observed] Drought/cold-wave factors modify yields and a volatility indicator represents risk.
+- Data Processing: [unverified] Weather-factor calibration and scenario distributions were not confirmed.
+- Baseline: [inferred] Q1 nominal plan evaluated under the same weather/market scenarios.
+- Model: [observed] Scenario allocation with profit-volatility selection.
+- Algorithm: [observed] Genetic-algorithm search under perturbed inputs.
+- Validation: [observed] Weather-factor changes and profit volatility are examined; repeatability and exact-gap evidence are unverified.
+- Visualization: [inferred] Scenario profit and area-change comparisons are relevant; exact encodings were not confirmed.
+- Main Result: [unverified] Risk-adjusted plan and comparative profits were not independently reproduced. [ev-paper-2024-c-ga-planting, pp. 1-3]
+
+### Q3
+
+- Goal: [observed] Include substitute/complement crop relations and coupled market changes.
+- Variables: [observed] Relationship parameters, uncertain inputs, crop areas, and profit.
+- Assumptions: [observed] Stated substitute/complement relations govern the scenario extension.
+- Data Processing: [unverified] Empirical identification or calibration of relationship magnitudes was not confirmed.
+- Baseline: [inferred] Q2 model with relationship terms removed.
+- Model: [observed] Interaction-aware uncertain planting allocation.
+- Algorithm: [observed] Genetic-algorithm search with the expanded assumptions.
+- Validation: [inferred] Run a relation-term ablation and perturb assumed relationship strength/sign.
+- Visualization: [observed] Early model figures/tables organize the interaction scenario rather than validate causality.
+- Main Result: [unverified] Interaction-driven numerical improvement was not independently verified. [ev-paper-2024-c-ga-planting, pp. 1-3]
+
+## Strong Points
+
+- [inferred] The solution extends a feasible allocation in stages from market accounting to weather uncertainty and crop interactions.
+
+## Weak Points
+
+- [unverified] The causal or empirical basis of crop relations, sensitivity grid, GA convergence, and repeated-seed evidence were not confirmed.
+
+## Transferable Patterns
+
+- [expert-rule] Treat uncalibrated relationships as scenarios, not facts, and use a relation-free ablation before attributing gains to the interaction mechanism.
+
+## Problem-Specific Tricks
+
+- [observed] Drought/cold-wave yield factors and the selected substitute/complement crop pairs are case-specific scenario assumptions.

@@ -40,3 +40,62 @@ tags: [allocation-optimization, crop-planning, land-use, robust-optimization, sc
 - [unverified] not confirmed: seven-year revenue values, currency units, and solver optimality as portable results. [ev-paper-2024-c-optimization-planting, p. 1]
 - [inferred] Clearly separating surplus-price assumptions before adding uncertainty and robustness is a useful feature. [ev-paper-2024-c-optimization-planting, pp. 1-3, 27]
 - [inferred] For allocation models, establish feasible accounting under each market convention before comparing robust selections. [ev-paper-2024-c-optimization-planting, pp. 1-3]
+
+## Structured question records
+
+Problem Type: [inferred] deterministic multi-period allocation followed by sensitivity and robust scenario selection.
+
+### Q1
+
+- Goal: [observed] Optimize 2024–2030 crop plans under waste and half-price surplus conventions.
+- Variables: [observed] Crop area by plot/year/season and associated production, sales, and profit.
+- Assumptions: [observed] Land type, area, non-replanting, three-year legume, dispersion, and minimum-area constraints apply.
+- Data Processing: [unverified] Raw attachment cleaning, imputation, and feature engineering were not confirmed.
+- Baseline: [observed] Fixed-parameter constrained planting plan.
+- Model: [observed] Two deterministic profit-maximization formulations with different surplus accounting.
+- Algorithm: [unverified] The reviewed evidence does not establish a portable solver recipe or optimality certificate.
+- Validation: [inferred] Replay every operational constraint and reconcile revenue under both surplus conventions.
+- Visualization: [observed] Formulation figures/tables organize land and constraint inputs.
+- Main Result: [unverified] Seven-year revenue and planting-plan values were not independently reproduced. [ev-paper-2024-c-optimization-planting, pp. 1-3]
+
+### Q2
+
+- Goal: [observed] Evaluate and select plans under uncertain demand, yield, cost, and price.
+- Variables: [observed] Uncertain economic/yield factors, crop areas, scenario profit, and robust criterion.
+- Assumptions: [observed] Generated uncertainty states represent the stated parameter ranges.
+- Data Processing: [unverified] Scenario-generation diagnostics and empirical distribution support were not confirmed.
+- Baseline: [inferred] Q1 nominal plan evaluated over the identical scenario set.
+- Model: [observed] Scenario evaluation with a worst-case-style robust selection.
+- Algorithm: [observed] Generate/evaluate feasible uncertainty states and select by the robust criterion.
+- Validation: [observed] Sensitivity analysis and a robust-selection section are reported.
+- Visualization: [observed] Later outputs support sensitivity and robust-plan comparison.
+- Main Result: [unverified] Robust-plan revenue and dominance claims were not independently reproduced. [ev-paper-2024-c-optimization-planting, pp. 18, 27]
+
+### Q3
+
+- Goal: [observed] Add crop substitution/complementarity and market-variable relationships, then compare with Q2.
+- Variables: [observed] Relationship parameters, uncertain inputs, crop areas, and scenario profit.
+- Assumptions: [unverified] The reviewed evidence does not confirm empirical calibration of every relationship.
+- Data Processing: [unverified] Correlation estimation and relationship-data preparation were not confirmed.
+- Baseline: [inferred] Q2 robust model without the relationship layer.
+- Model: [inferred] Correlated/interaction-aware scenario allocation built on the Q2 feasibility rules.
+- Algorithm: [inferred] Re-evaluate feasible plans under related parameter scenarios.
+- Validation: [inferred] Compare against a relation-free ablation and perturb relationship signs/magnitudes.
+- Visualization: [inferred] Q2-versus-Q3 plan/profit comparisons are relevant; exact encodings were not confirmed.
+- Main Result: [unverified] Relationship-driven strategy changes were not independently verified. [ev-paper-2024-c-optimization-planting, pp. 1-3, 27]
+
+## Strong Points
+
+- [inferred] Surplus-sale conventions are separated before uncertainty and robustness are introduced.
+
+## Weak Points
+
+- [unverified] Solver optimality, scenario calibration, exact sensitivity ranges, and Q3 relationship evidence were not confirmed.
+
+## Transferable Patterns
+
+- [expert-rule] Keep feasibility and accounting identical when comparing nominal, sensitivity, and robust plans so that differences isolate uncertainty treatment.
+
+## Problem-Specific Tricks
+
+- [observed] The exact land-type, rotation, legume-window, dispersion, and minimum-area rules belong to the supplied village data.

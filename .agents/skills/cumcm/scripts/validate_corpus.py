@@ -18,6 +18,24 @@ PAPER_HEADINGS = (
     "## Baseline, model, and algorithm",
     "## Validation, sensitivity/robustness, and figure purposes",
     "## Reported results, strengths, limitations, and transferable rules",
+    "## Structured question records",
+    "## Strong Points",
+    "## Weak Points",
+    "## Transferable Patterns",
+    "## Problem-Specific Tricks",
+)
+QUESTION_COUNTS = {"A": 5, "B": 4, "C": 3}
+QUESTION_FIELDS = (
+    "Goal",
+    "Variables",
+    "Assumptions",
+    "Data Processing",
+    "Baseline",
+    "Model",
+    "Algorithm",
+    "Validation",
+    "Visualization",
+    "Main Result",
 )
 PROBLEM_HEADINGS = (
     "## Reality and deliverable",
@@ -66,6 +84,21 @@ def validate_card(path: Path) -> list[str]:
     for heading in expected:
         if heading not in text:
             errors.append(f"{path}: missing heading {heading}")
+    if "paper-cards" in path.parts:
+        if not re.search(r"(?mi)^Problem Type:\s*\S", text):
+            errors.append(f"{path}: missing Problem Type")
+        expected_questions = QUESTION_COUNTS.get(str(meta.get("problem", "")).upper(), 0)
+        for number in range(1, expected_questions + 1):
+            block = re.search(
+                rf"(?ms)^### Q{number}\b.*?(?=^### Q\d+\b|^## |\Z)",
+                text,
+            )
+            if not block:
+                errors.append(f"{path}: missing structured question Q{number}")
+                continue
+            for field in QUESTION_FIELDS:
+                if not re.search(rf"(?mi)^- {re.escape(field)}:\s*\S", block.group(0)):
+                    errors.append(f"{path}: Q{number} missing field {field}")
     return errors
 
 

@@ -51,3 +51,67 @@ def test_chinese_structure_synonyms_match_tags(tmp_path):
     results = search_cards(tmp_path, "整数 决策变量 约束 不确定性", top=3)
     assert results[0]["id"] == "opt"
     assert results[0]["score"] > 0
+
+
+def test_chain_search_keeps_stage_results_and_deduplicates_union(tmp_path):
+    search_chain = load_function(
+        "search_chain_cases",
+        ".agents/skills/cumcm/scripts/search_chain_cases.py",
+        "search_chain",
+    )
+    write_card(
+        tmp_path / "forecast.md",
+        "---\nid: forecast\ntags: [time-series, prediction]\n"
+        "source_evidence: [ev-forecast]\n---\n# Forecast\n"
+        "## Validation\nrolling validation and uncertainty intervals\n",
+    )
+    write_card(
+        tmp_path / "schedule.md",
+        "---\nid: schedule\ntags: [mixed-integer, optimization, uncertainty]\n"
+        "source_evidence: [ev-schedule]\n---\n# Schedule\n"
+        "## Constraints\ninteger decision variables and robust scenarios\n",
+    )
+    result = search_chain(
+        tmp_path,
+        [("forecast", "time series prediction validation"),
+         ("schedule", "mixed integer optimization constraints")],
+        "prediction optimization uncertainty",
+        top=3,
+    )
+    assert set(result["stages"]) == {"forecast", "schedule"}
+    assert result["stages"]["forecast"][0]["id"] == "forecast"
+    assert result["stages"]["schedule"][0]["id"] == "schedule"
+    union_ids = [row["id"] for row in result["union"]]
+    assert len(union_ids) == len(set(union_ids))
+    schedule = next(row for row in result["union"] if row["id"] == "schedule")
+    assert "stage:schedule" in schedule["matched_queries"]
+    assert "chain" in schedule["matched_queries"]
+
+
+def test_chain_search_preserves_no_hit_for_missing_stage_structure(tmp_path):
+    search_chain = load_function(
+        "search_chain_cases_no_hit",
+        ".agents/skills/cumcm/scripts/search_chain_cases.py",
+        "search_chain",
+    )
+    write_card(
+        tmp_path / "geometry.md",
+        "---\nid: geometry\ntags: [geometry, validation]\n"
+        "source_evidence: [ev-geometry]\n---\n# Geometry\n"
+        "## Validation\ntime-step refinement\n",
+    )
+    write_card(
+        tmp_path / "schedule.md",
+        "---\nid: schedule\ntags: [mixed-integer, optimization]\n"
+        "source_evidence: [ev-schedule]\n---\n# Schedule\n"
+        "## Constraints\ninteger allocation constraints\n",
+    )
+    result = search_chain(
+        tmp_path,
+        [("forecast", "time series prediction validation"),
+         ("schedule", "mixed integer optimization constraints")],
+        "prediction optimization uncertainty",
+        top=3,
+    )
+    assert result["stages"]["forecast"] == []
+    assert result["chain"] == []

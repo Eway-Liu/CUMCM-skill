@@ -40,3 +40,88 @@ tags: [geometry, kinematics, spiral, collision-detection, constrained-optimizati
 - [unverified] not confirmed: legible numerical result-table values and units beyond the reviewed prose. [ev-paper-2024-a-geometry-path, pp. 5-45]
 - [inferred] The explicit path-to-chain kinematic construction before collision reduction is a useful modeling feature. [ev-paper-2024-a-geometry-path, pp. 1-4]
 - [inferred] The reduced-corner collision test is efficient only insofar as the selected extrema remain valid for the stated geometry; retain an independent boundary check when transferring it. [ev-paper-2024-a-geometry-path, pp. 1, 4]
+
+## Structured question records
+
+Problem Type: [inferred] mechanism-driven curve geometry, rigid-chain kinematics, collision detection, and constrained path design.
+
+### Q1
+
+- Goal: [observed] Compute the linked chain's positions and speeds on the incoming spiral.
+- Variables: [observed] Leader arc length/time, handle angles, coordinates, and velocities.
+- Assumptions: [observed] Rigid benches and handles constrained to the equal-pitch spiral.
+- Data Processing: [unverified] No sampled-data cleaning is reported; the inputs are geometric constants.
+- Baseline: [observed] Analytical polar-spiral kinematics.
+- Model: [observed] Integral leader path relation plus fixed-link recurrences.
+- Algorithm: [observed] Sequential numerical solution of handle positions and differentiated velocities.
+- Validation: [inferred] Check link lengths, curve membership, time origin, and speed propagation.
+- Visualization: [observed] Early figures explain the spiral and linked-bench geometry.
+- Main Result: [unverified] Requested state-table values were not independently transcribed or reproduced. [ev-paper-2024-a-geometry-path, pp. 1-4]
+
+### Q2
+
+- Goal: [observed] Determine the collision-limited termination state.
+- Variables: [observed] Time, bench corners, selected handle-center lines, and distances.
+- Assumptions: [observed] Selected outer corners and line distances are sufficient collision screens.
+- Data Processing: [unverified] No raw-data preprocessing is reported.
+- Baseline: [observed] Q1 chain-state recurrence.
+- Model: [observed] Reduced corner-to-line collision conditions.
+- Algorithm: [inferred] Search the Q1 trajectory for the first threshold crossing.
+- Validation: [unverified] Full-rectangle collision comparison and refinement tolerances were not confirmed.
+- Visualization: [observed] Geometry figures explain the collision construction.
+- Main Result: [unverified] A portable stopping-time value was not confirmed in the reviewed pages. [ev-paper-2024-a-geometry-path, pp. 1-4]
+
+### Q3
+
+- Goal: [observed] Find a feasible minimum spiral pitch for the turnaround region.
+- Variables: [observed] Pitch and collision-feasible chain configurations.
+- Assumptions: [observed] The reduced Q2 collision screen remains valid as pitch changes.
+- Data Processing: [unverified] No sampled-data preprocessing is reported.
+- Baseline: [inferred] Deterministic feasibility evaluation for a candidate pitch.
+- Model: [observed] Pitch-constrained spiral geometry.
+- Algorithm: [inferred] Scalar boundary search using the common geometry solver.
+- Validation: [unverified] Search tolerance and independent full-geometry verification were not confirmed.
+- Visualization: [inferred] A pitch-boundary geometry view is relevant; exact encodings were not confirmed.
+- Main Result: [unverified] The numerical minimum pitch was not accepted as evidence from the reviewed pages. [ev-paper-2024-a-geometry-path, pp. 1-4]
+
+### Q4
+
+- Goal: [observed] Build the tangent two-arc turnaround and propagate chain state across path segments.
+- Variables: [observed] Arc radii/centers, segment membership, handle coordinates, and speeds.
+- Assumptions: [observed] Two tangent arcs connect the center-symmetric spiral branches.
+- Data Processing: [unverified] No sampled-data preprocessing is reported.
+- Baseline: [observed] Piecewise spiral/arc path geometry.
+- Model: [observed] Case-based handle locator and linked-chain recurrence on each segment.
+- Algorithm: [observed] Segment classification followed by sequential state propagation.
+- Validation: [inferred] Check position/tangent continuity and link length at every segment transition.
+- Visualization: [observed] Early figures explain the turnaround construction.
+- Main Result: [unverified] Detailed path-length and state outputs were not visually verified. [ev-paper-2024-a-geometry-path, pp. 2-4]
+
+### Q5
+
+- Goal: [observed] Bound leader speed using the maximum induced handle speed.
+- Variables: [observed] Leader speed and follower-speed amplification along the fixed path.
+- Assumptions: [observed] Geometry from Q4 is fixed and velocity propagation is scalable under the model.
+- Data Processing: [unverified] No raw-data preprocessing is reported.
+- Baseline: [inferred] Directly evaluate all handle speeds for each candidate leader speed.
+- Model: [observed] Speed-cap constrained scalar optimization.
+- Algorithm: [inferred] Boundary search on leader speed using the kinematic recurrence.
+- Validation: [unverified] Numerical tolerance and exhaustive path maximum checks were not confirmed.
+- Visualization: [inferred] Handle-speed envelope versus path position is relevant; exact encodings were not confirmed.
+- Main Result: [unverified] The maximum-speed value and unit were not confirmed. [ev-paper-2024-a-geometry-path, pp. 5-45]
+
+## Strong Points
+
+- [inferred] The paper constructs the path-to-chain kinematics explicitly before reducing collision and speed questions.
+
+## Weak Points
+
+- [inferred] Efficiency depends on a selected-corner collision reduction whose completeness was not established in the reviewed evidence.
+
+## Transferable Patterns
+
+- [expert-rule] Reuse one verified state-propagation engine across event detection, feasibility search, path design, and speed optimization.
+
+## Problem-Specific Tricks
+
+- [observed] Selected Bench Dragon outer corners, handle-center lines, and a case-based two-arc locator depend on this geometry and should not become generic collision rules.

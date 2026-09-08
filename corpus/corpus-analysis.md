@@ -14,6 +14,25 @@ This analysis uses only the ten replacement local PDFs in `2024优秀论文`: 3 
 - [observed] All ten evidence records are local-PDF records with page locators and SHA-256 values; PDFKit extracted readable text on every page of every selected source. [ev-paper-2024-a-geometry-path, pp. 1-45; ev-paper-2024-a-dynamic-search-route, pp. 1-58; ev-paper-2024-a-objective-optimization-form, pp. 1-62; ev-paper-2024-b-multistage-simulation, pp. 1-70; ev-paper-2024-b-aco-ga-monte-carlo, pp. 1-28; ev-paper-2024-b-production-decision-design, pp. 1-37; ev-paper-2024-c-optimization-planting, pp. 1-49; ev-paper-2024-c-differential-ga-planting, pp. 1-61; ev-paper-2024-c-ga-planting, pp. 1-45; ev-paper-2024-c-stochastic-planting, pp. 1-58]
 - [observed] Targeted source pages include A collision/sensitivity checks, B result/evaluation or robustness, and C sensitivity/robust selection; the alternate renderer lacks CJK glyph support for five PDFs, so unreviewed figure/table details remain unverified. [ev-paper-2024-a-dynamic-search-route, pp. 13, 16-17, 26, 28-29; ev-paper-2024-a-objective-optimization-form, pp. 16-17, 28-29; ev-paper-2024-b-aco-ga-monte-carlo, pp. 20-22; ev-paper-2024-b-multistage-simulation, pp. 15, 21; ev-paper-2024-b-production-decision-design, pp. 21-23; ev-paper-2024-c-optimization-planting, pp. 18, 27; ev-paper-2024-c-differential-ga-planting, p. 42]
 
+## Required-dimension summary
+
+| Required analysis dimension | Corpus result | Evidence boundary |
+| --- | --- | --- |
+| Paper count | [observed] 10 local papers, totaling 513 pages. | Complete for the user-selected 2024 PDFs, not the wider CUMCM literature. |
+| Year and problem | [observed] 2024 A: 3; 2024 B: 3; 2024 C: 4. | No reusable 2025 solution paper is mixed into this corpus. |
+| Problem types | [inferred] A: geometry/kinematics/event constraints; B: sampling and multistage quality decisions; C: multi-period constrained allocation. | Types summarize mathematical structure, not contest-letter stereotypes. |
+| Model types | [observed] Geometry/recurrence/collision, sampling/expected-profit/state decisions, LP/constrained allocation, scenario/risk models, and numerical or metaheuristic search. | Presence is not evidence that a family is valid for a future task. |
+| Model combinations | [inferred] Mechanism + boundary/global search; sampling + decision graph + uncertainty update; deterministic allocation + scenario/robust/risk extension. | A combination is transferable only when each added layer fixes a named limitation. |
+| Data processing | [observed] A mainly uses deterministic geometry; B uses sampling or generated defect scenarios; C maps workbook economic/land inputs into allocation parameters. [unverified] Detailed raw-data cleaning was not confirmed in most reviewed pages. | Do not infer imputation, outlier treatment, distribution fit, or correlation quality when absent. |
+| Validation methods | [observed] Explicit validation/sensitivity/evaluation sections were located in 7 of 10 cards, including collision/model checks, defect scenarios, and planting sensitivity/robust selection. | Section presence does not prove independent replication or adequate controls. |
+| Sensitivity/robustness | [observed] Parameter sensitivity, 3-sigma defect scenarios, Bayesian updates, uncertain crop inputs, CVaR, and robust selection appear in B/C/A subsets. | Distribution choice, risk level, and perturbation range require task-specific justification. |
+| Figure types/purposes | [observed] Identifiable purposes in 6 cards cover geometry/state explanation, decision flow, solver comparison, and plan/risk comparison; 4 cards remain figure-level `unverified`. | No palette or chart style is copied mechanically. |
+| Abstract pattern | [observed] All 10 abstracts progress from problem to method to solution/reportable output, with differing numerical detail. | This is a reasoning shape, not a sentence template or fixed Q1/Q2 repetition. |
+| Common paper structure | [inferred] Formalize objects/constraints -> establish a mechanism or accounting baseline -> apply a solution layer -> report outputs -> evaluate or discuss limits. | Chronological work logs and unexplained formula stacks are not promoted as patterns. |
+| Model-improvement pattern | [inferred] More complete collision checks, scale-up search, parameter uncertainty, tail risk, or interaction assumptions are added after a base model. | An addition counts as improvement only after baseline-defect naming, controlled comparison, and failure-mode validation. |
+
+The ten paper cards now contain **39 explicit question records**: 15 across the three five-question A papers, 12 across the three four-question B papers, and 12 across the four three-question C papers. Every record exposes Goal, Variables, Assumptions, Data Processing, Baseline, Model, Algorithm, Validation, Visualization, and Main Result; each card separately records Strong Points, Weak Points, Transferable Patterns, and Problem-Specific Tricks.
+
 ## Observed structures and reported practices
 
 | Structure | Count in selected cards | Observed support | Validity boundary |

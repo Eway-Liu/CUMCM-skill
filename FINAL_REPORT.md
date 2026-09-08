@@ -6,7 +6,7 @@ Status: implemented and verified in an isolated worktree
 
 ## Outcome
 
-The project now contains four low-coupling, discoverable CUMCM Skills backed by a source inventory, structured problem/paper cards, evidence-linked synthesis, reusable templates/scripts, RED/GREEN pressure tests, a problem-only 2025 A hold-out, and a separately isolated post-release paper review.
+The project now contains four low-coupling, discoverable CUMCM Skills backed by a source inventory, structured problem/paper cards, an explicit bidirectional structure-model index, evidence-linked synthesis, reusable templates/scripts, RED/GREEN pressure tests, a problem-only 2025 A hold-out, a separately isolated post-release paper review, and an independently rewritten hybrid forecast-to-optimization workflow.
 
 The system transfers decision rules rather than memorized topic-to-algorithm mappings: formalize the real event and constraints, choose a structure-compatible baseline, justify added complexity, execute failure-mode-specific validation, design only purpose-led figures, and keep every manuscript claim traceable to a current artifact.
 
@@ -15,7 +15,7 @@ The system transfers decision rules rather than memorized topic-to-algorithm map
 ```text
 .agents/skills/
 ├── cumcm-global/          # 1 entry + 5 references + 2 templates + metadata
-├── cumcm-modeling/        # 1 entry + 7 references + 3 templates + 2 scripts + metadata
+├── cumcm-modeling/        # 1 entry + 8 references + 3 templates + 2 scripts + metadata
 ├── cumcm-visualization/   # 1 entry + 6 references + 1 template + 2 scripts + metadata
 ├── cumcm-thesis/          # 1 entry + 7 references + 4 templates + metadata
 └── cumcm/                 # internal corpus toolkit; no SKILL.md, so not a fifth Skill
@@ -23,7 +23,7 @@ The system transfers decision rules rather than memorized topic-to-algorithm map
     └── scripts/           # inventory, retrieval, corpus and suite validation
 ```
 
-The four entrypoints contain 441, 404, 342 and 365 words respectively. Detailed knowledge stays in conditionally routed references. The suite validator found no broken links/artifacts, scaffold markers, oversized entrypoints, unexpected discoverable Skill, or duplicated detailed entrypoint knowledge.
+The four entrypoints contain 494, 459, 342 and 365 words respectively. Detailed knowledge stays in conditionally routed references. The suite validator found no broken links/artifacts, scaffold markers, oversized entrypoints, unexpected discoverable Skill, or duplicated detailed entrypoint knowledge.
 
 ## Corpus Summary
 
@@ -43,10 +43,11 @@ Formats: 32 XLSX, 22 PDF, 3 DOC and 2 GIF. Generated files, caches, symlinks and
 ### Structured evidence
 
 - 18 problem cards cover 2020–2025 A/B/C. The 12 local 2022–2025 statements are supplemented by six 2020–2021 statement cards from a pinned repository mirror; their uninspected attachments remain metadata-only.
-- 10 paper cards cover every user-selected local 2024 paper: 3 A, 3 B and 4 C.
+- 10 paper cards cover every user-selected local 2024 paper: 3 A, 3 B and 4 C. Together they contain 39 explicit subquestion records; every record exposes Goal, Variables, Assumptions, Data Processing, Baseline, Model, Algorithm, Validation, Visualization and Main Result, followed by separate Strong Points, Weak Points, Transferable Patterns and Problem-Specific Tricks.
 - The 2024 papers total 513 pages. Page-aware extraction found readable text on every page; representative equation/result/validation pages were inspected, with unreadable visual details left `unverified`.
 - The evidence ledger contains 44 unique records: 18 problem statements, 10 local paper PDFs, 10 local attachment groups and 6 attachment-metadata records.
 - `corpus/corpus-analysis.md` and two compact evidence-linked pattern references preserve cross-paper synthesis without copying paper language.
+- `.agents/skills/cumcm/references/bidirectional-index.md` supports both problem-structure -> model-family and model-family -> problem-structure lookup, with use/avoid conditions and local evidence; unsupported structures return no corpus case rather than a fabricated analogy.
 
 The user-supplied 2025 A validation paper is deliberately **not** in the reusable paper corpus or search index. Its SHA-256, extraction boundary and findings are isolated in `tests/holdout-2025a/post-release-paper-review.md`.
 
@@ -79,14 +80,20 @@ Eleven original scenarios test orchestration, six modeling risks, innovation, vi
 | No-Skill RED baseline | 9/11 pass, 2/11 fail | Existing model behavior was already strong on orchestration/modeling and T2; it failed purpose-free visualization V1 and generic abstract T1. No false failures were invented. |
 | Four-Skill GREEN | 11/11 pass | The Skills preserved all nine good behaviors and closed V1/T1 without new rationalizations. |
 | Post-release H1 regression | 4/4 required defects identified | Before the final refactor, a fresh agent already caught predicate mismatch, interval double counting, mis-indexed shared resources and overclaimed convergence. References were only hardened to make these invariants explicit. |
+| Hybrid-chain H2 RED | 2 pass, 3 partial, 1 fail | The baseline lacked stage-plus-chain retrieval, a durable uncertainty handoff, complete candidate layers and an innovation rejection rule. |
+| Hybrid-chain H2 GREEN | 6/6 pass | A fresh blind evaluator produced staged retrieval with honest no-hit behavior, A/B/C candidates, versioned trajectory handoff, four-layer validation and a numeric discard rule. |
 
-The final suite contains 20 passing Python tests for inventory, corpus retrieval/validation, table profiling, validation helpers, plot helpers and Skill-suite contracts.
+The final suite contains 24 passing Python tests for inventory, corpus retrieval/validation, mixed-link search with honest no-hit behavior, table profiling, validation helpers, plot helpers and Skill-suite contracts.
+
+## External Reference Boundary
+
+The public `math-modeling-skill-pro` repository was inspected only as a design reference. Its license is proprietary and reserves rights, so no case, template, code scaffold, script or prose was copied. The user-selected general ideas—mixed-link retrieval, candidate layering, forecast uncertainty propagation, four-layer validation and falsifiable innovation—were independently expressed within this suite's existing low-coupling contracts. The source and adoption/rejection boundary are recorded in `docs/reference-audits/2026-09-08-math-modeling-skill-pro.md`.
 
 ## 2025 A Hold-out Result
 
 ### Pre-release problem-only phase
 
-A fresh agent received only the four Skills, the official 2025 A statement/card and official blank templates. It did not receive solution papers, expert review, corpus analysis or prior test results. The frozen independent artifact has SHA-256 `651b5e694911d8185ce2a619f9eb6a95ae0c58f1ce5d30d3a430a94e0f39c4bd`.
+A fresh agent received only the four Skills, the official 2025 A statement/card and official blank templates. It did not receive solution papers, expert review, corpus analysis or prior test results. The frozen independent artifact has SHA-256 `419431988af12c9c28dd937cd6e7220cedd5ba0b28154cf41fcb94e263101d1d`.
 
 It passed **10/10 design dimensions**: problem type, dependency graph, candidates/exclusions, baseline, full formulation, algorithm/artifacts, validation, sensitivity/robustness, figure/table plan and paper structure. It modeled trajectories and constraints, distinguished a point-target baseline from a finite-cylinder interpretation, used temporal unions for multi-cloud coverage, audited shared resources, and withheld all unexecuted numerical claims.
 
@@ -114,6 +121,7 @@ Therefore project-local discovery is verified, not inferred from file presence. 
 The final integration run passed all of the following before the implementation status was closed:
 
 - corpus validator;
+- explicit paper-card schema validation for all 39 A/B/C subquestion records and four transfer/limitation fields per card;
 - four-entry Skill-suite validator;
 - bundled quick validator for each discoverable Skill;
 - full Python test suite with headless matplotlib;

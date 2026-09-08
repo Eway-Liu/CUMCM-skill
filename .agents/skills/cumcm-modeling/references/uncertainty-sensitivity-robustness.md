@@ -12,3 +12,4 @@ Predefine the conclusion-stability metric: sign, ranking, feasibility, target at
 
 For stochastic algorithms, separate input uncertainty from optimizer randomness. Hold instances and compute budgets fixed, run multiple seeds, and report feasible rate, best/median/worst, dispersion and gap to a baseline or bound.
 
+For forecast-to-decision chains, retain temporal or spatial dependence in trajectory scenarios; independent sampling at every horizon can manufacture implausible paths. Record scenario weights and map them explicitly into downstream parameters, constraints or objective terms. Compare the point-estimate baseline with the uncertainty-aware decision on cost, feasibility, service level, regret and policy stability.

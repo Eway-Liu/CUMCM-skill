@@ -56,3 +56,13 @@ def test_suite_validator_accepts_minimal_valid_suite(tmp_path):
             encoding="utf-8",
         )
     assert module.validate_suite(tmp_path) == []
+
+
+def test_global_routes_the_bidirectional_structure_model_index():
+    entry = Path(".agents/skills/cumcm-global/SKILL.md").read_text(encoding="utf-8")
+    index = Path(".agents/skills/cumcm/references/bidirectional-index.md")
+    assert "../cumcm/references/bidirectional-index.md" in entry
+    assert index.is_file()
+    text = index.read_text(encoding="utf-8")
+    assert "## Problem structure -> model families" in text
+    assert "## Model family -> problem structures" in text

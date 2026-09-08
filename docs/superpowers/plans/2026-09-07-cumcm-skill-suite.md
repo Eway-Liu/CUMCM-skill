@@ -330,19 +330,19 @@ git add .agents/skills/cumcm/scripts/search_cases.py .agents/skills/cumcm/script
 git commit -m "feat: add structure-aware corpus retrieval"
 ```
 
-### Task 5: Implement and Verify the `cumcm` Orchestrator Skill
+### Task 5: Implement and Verify the `cumcm-global` Orchestrator Skill
 
 **Files:**
-- Create: `.agents/skills/cumcm/SKILL.md`
-- Create: `.agents/skills/cumcm/agents/openai.yaml`
-- Create: `.agents/skills/cumcm/references/competition-workflow.md`
-- Create: `.agents/skills/cumcm/references/problem-taxonomy.md`
-- Create: `.agents/skills/cumcm/references/question-dependency.md`
-- Create: `.agents/skills/cumcm/references/final-checklist.md`
-- Create: `.agents/skills/cumcm/references/contracts.md`
-- Create: `.agents/skills/cumcm/templates/problem-analysis.md`
-- Create: `.agents/skills/cumcm/templates/competition-plan.md`
-- Create: `tests/skill-results/cumcm.md`
+- Create: `.agents/skills/cumcm-global/SKILL.md`
+- Create: `.agents/skills/cumcm-global/agents/openai.yaml`
+- Create: `.agents/skills/cumcm-global/references/competition-workflow.md`
+- Create: `.agents/skills/cumcm-global/references/problem-taxonomy.md`
+- Create: `.agents/skills/cumcm-global/references/question-dependency.md`
+- Create: `.agents/skills/cumcm-global/references/final-checklist.md`
+- Create: `.agents/skills/cumcm-global/references/contracts.md`
+- Create: `.agents/skills/cumcm-global/templates/problem-analysis.md`
+- Create: `.agents/skills/cumcm-global/templates/competition-plan.md`
+- Create: `tests/skill-results/cumcm-global.md`
 
 **Interfaces:**
 - Consumes: problem cards, corpus search results, and user-selected stage.
@@ -354,7 +354,7 @@ Extract only observed routing, decomposition, evidence-boundary, or completion-g
 
 - [ ] **Step 2: Initialize the Skill after RED evidence exists**
 
-The `cumcm` directory already contains corpus scripts and evidence references, so do not run the initializer over it. Create `SKILL.md` directly and generate `agents/openai.yaml` with the bundled metadata generator. Read `skill-creator/references/openai_yaml.md` immediately before authoring the metadata.
+Keep `cumcm` as the internal corpus-tool directory without a `SKILL.md`. Create the discoverable `cumcm-global` directory and generate `agents/openai.yaml` with the bundled metadata generator. Read `skill-creator/references/openai_yaml.md` immediately before authoring the metadata.
 
 - [ ] **Step 3: Author the minimal orchestrator**
 
@@ -362,16 +362,16 @@ The `cumcm` directory already contains corpus scripts and evidence references, s
 
 - [ ] **Step 4: Run the same fresh-agent scenarios with the Skill**
 
-Dispatch a fresh agent with `cumcm` explicitly loaded and the same orchestrator scenarios. Save its response and pass/fail comparison to `tests/skill-results/cumcm.md`. If it creates new rationalizations, update only the relevant guidance and repeat.
+Dispatch a fresh agent with `cumcm-global` explicitly loaded and the same orchestrator scenarios. Save its response and pass/fail comparison to `tests/skill-results/cumcm-global.md`. If it creates new rationalizations, update only the relevant guidance and repeat.
 
 - [ ] **Step 5: Validate and commit before starting another Skill**
 
 Run:
 
 ```bash
-python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm
+python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm-global
 python .agents/skills/cumcm/scripts/validate_corpus.py corpus
-git add .agents/skills/cumcm tests/skill-results/cumcm.md
+git add .agents/skills/cumcm-global tests/skill-results/cumcm-global.md
 git commit -m "feat: add CUMCM orchestration skill"
 ```
 
@@ -632,7 +632,7 @@ def load_module(name: str, path: str):
 
 def test_suite_validator_reports_broken_contracts(tmp_path):
     module = load_module("validate_skills", ".agents/skills/cumcm/scripts/validate_skills.py")
-    for name in ("cumcm", "cumcm-modeling", "cumcm-visualization", "cumcm-thesis"):
+    for name in ("cumcm-global", "cumcm-modeling", "cumcm-visualization", "cumcm-thesis"):
         folder = tmp_path / name
         folder.mkdir()
         folder.joinpath("SKILL.md").write_text(
@@ -675,7 +675,7 @@ Check that `.agents/skills/` is scanned by the current Codex runtime using a fre
 ```bash
 python .agents/skills/cumcm/scripts/validate_corpus.py corpus
 python .agents/skills/cumcm/scripts/validate_skills.py .agents/skills
-python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm
+python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm-global
 python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm-modeling
 python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm-visualization
 python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm-thesis

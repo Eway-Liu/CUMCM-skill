@@ -50,8 +50,10 @@ Each evidence record must include, as applicable:
 
 URLs and file paths identify where evidence came from; they do not by themselves prove that the stated content was inspected. Mirrors should retain the canonical-source identity, and moved local files must be updated in the ledger rather than silently losing provenance.
 
-## 2025 A permanent solution exclusion
+## 2025 A hold-out release protocol
 
-The 2025 A problem statement and its official attachments may be indexed and used to prepare the independent hold-out input. No agent, Skill author, corpus process, or test may read or encode any 2025 A solution paper, excellent-paper exhibit, expert review, solution commentary, or source that reveals solution methods.
+Before the independent artifact was completed, the 2025 A problem statement and its official attachments were the only permitted 2025 A sources. No solution paper, excellent-paper exhibit, expert review, commentary, hidden corpus note, or source revealing solution methods was read or encoded during solution generation.
 
-The 2025 A evidence ledger may contain problem sources only. Task 9 evaluates the independent solution against the problem statement, attachments, internal consistency, and transferable rules derived from the ten local 2024 papers. The exclusion is not released during this implementation.
+The independent artifact was completed in a fresh context and frozen as `tests/holdout-2025a/independent-solution.md` before solution evidence was released. On 2026-09-08 the user explicitly supplied and authorized a 2025 A paper for post-release validation and Skill improvement. That paper may be used only in clearly labeled post-release comparison artifacts; it must not be added to `corpus/paper-cards`, indexed by `search_cases.py`, or retroactively presented as input to the independent solution.
+
+The 2025 A evidence ledger remains problem-only so `validate_corpus.py` can enforce the reusable corpus boundary. Post-release validation records must state the paper hash, inspected page range, extraction limitations, and which Skill changes were made. Pre-release problem-only scoring and post-release paper comparison are separate results.

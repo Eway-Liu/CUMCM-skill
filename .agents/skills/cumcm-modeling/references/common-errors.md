@@ -10,6 +10,9 @@
 | Best stochastic run is reported alone | Report seeds, feasible rate, distribution and fair baseline |
 | High training R-squared is called reliable | Audit leakage, residuals and out-of-sample behavior |
 | Calibration is called validation | Reserve independent cases or structural checks |
+| Prose, objective and code use different event predicates | Freeze one physical event and test its geometry, time window and Boolean logic |
+| Individual coverage durations are added despite overlap | Optimize the union measure unless overlap has explicit additive value |
+| A resource limit is indexed inside each target | Expand a small instance and sum across every consumer of the shared resource |
+| One flat stochastic trace proves optimality or sensitivity | Treat it as one-run stopping behavior; require baselines, seeds, bounds and separate perturbations |
 | A+B is called innovation | Name a defect and isolate the added mechanism by ablation |
 | Result is mathematically valid but not interpretable | Translate magnitude, units, constraints and validity range back to reality |
-

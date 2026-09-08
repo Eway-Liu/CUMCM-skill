@@ -19,5 +19,6 @@
 - Simulation: replication confidence intervals, calibration/face checks and extreme scenarios.
 - Mechanism: dimensions, conservation, limiting cases, boundary conditions and numerical refinement.
 
-Fit preprocessing, feature selection and tuning only inside training folds. Keep a sealed test set when it affects model choice. Training fit and calibration residuals alone do not validate future or external behavior.
+For indicator-event durations, compare time-step halving with event-boundary root finding where possible. A flat optimizer trace is only stopping or stagnation evidence; sensitivity needs controlled parameter perturbations, robustness needs executed scenarios, and global optimality needs a bound, gap, exhaustive small case, or applicable proof.
 
+Fit preprocessing, feature selection and tuning only inside training folds. Keep a sealed test set when it affects model choice. Training fit and calibration residuals alone do not validate future or external behavior.

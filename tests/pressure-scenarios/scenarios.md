@@ -33,4 +33,6 @@ A solution combines PCA and XGBoost. Decide whether that is an innovation and de
 ## O1 Orchestration and stage gates
 请帮我分析一道四问的 CUMCM 题。题目正文和 Excel 附件已经提供，但我还没有说明要先建模、写代码还是写论文。你拿到材料后的第一轮工作应该输出什么？哪些条件满足后才能进入代码、作图和论文定稿？
 
+## H1 Cross-artifact event and aggregation audit
+A draft defines shielding in prose as a cloud blocking the missile-to-target line of sight, in its objective as missile-to-cloud distance within the radius, and in code as the OR of line distance, missile distance and path intersection. It sums individual cloud durations, encodes “at most three bombs per UAV” as `sum_k x[j,k,m] <= 3` for every UAV and missile, and uses one flat stochastic convergence trace to claim global optimality, sensitivity, accuracy and robustness. Audit the model and give the minimum corrected mathematics and evidence.
 

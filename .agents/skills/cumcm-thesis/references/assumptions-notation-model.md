@@ -2,7 +2,7 @@
 
 ## Assumptions
 
-Keep only assumptions that are necessary, simplify the model, and have a plausible basis. For each, state the affected relation and likely bias. Remove common knowledge and statements unused by equations or validation.
+Keep only assumptions that are necessary, simplify the model, and have a plausible basis. For each material assumption, record: necessity, supporting basis, affected equation/constraint, likely bias if violated, and an available check or sensitivity test. Remove common knowledge and statements unused by equations or validation. If no check is currently possible, mark the assumption unverified and bound the affected conclusion.
 
 ## Notation
 
@@ -18,4 +18,3 @@ Present reality -> mathematical definition -> derivation -> model equation -> va
 ## Solution description
 
 Name the solver/algorithm, parameters, initial conditions, software, seed when relevant, tolerance, stopping condition and repeated-run protocol. Replace “用 Python 求解得到” with enough detail to reproduce the result. Do not claim reproducibility when code, data or environment is missing.
-

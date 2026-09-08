@@ -4,6 +4,8 @@
 
 Do not repeat every table cell. State the comparison or change, quantify it with a traceable key, give the unit/denominator, and explain what it means in the real problem. Distinguish statistical, numerical and practical significance.
 
+For each conclusion, preserve a compact **claim -> evidence -> limit** chain. Ask four questions: which subquestion does this answer; how does it compare with the baseline, theory or reality; is the difference practically meaningful; and under what observed or plausible condition would it reverse or stop applying? A reversal condition is a boundary to test, not permission to invent a threshold.
+
 Recompute percentage change as `(new - old) / old`; do not call the ratio `new / old` an increase. Resolve disagreements among abstract, prose, table labels and figure annotations before writing a conclusion. An optimizer parameter path is not a sensitivity experiment, and a 3D trajectory illustration is not geometric or numerical validation.
 
 ## Strengths
@@ -12,7 +14,7 @@ Name the mechanism that creates the advantage. Example: an explicit capacity con
 
 ## Limitations
 
-Name the assumption, its consequence, and the affected validity range. Example: deterministic travel time can make tight schedules infeasible under peak congestion and can overstate resource utilization.
+Name the assumption, its consequence and bias direction, and the affected validity range. State which data or test could challenge it and what must be recalibrated before deployment. Example: deterministic travel time can make tight schedules infeasible under peak congestion and can overstate resource utilization.
 
 ## Improvements
 

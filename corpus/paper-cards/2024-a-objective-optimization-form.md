@@ -11,7 +11,7 @@ tags: [geometry, kinematics, spiral, collision-detection, separating-axis-theore
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024A 基于目标优化的板凳龙形态调节.pdf` (62 pages).
+- Historical source identity: `2024优秀论文/2024A 基于目标优化的板凳龙形态调节.pdf` (62 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-a-objective-optimization-form`.
 - [observed] Readable text extraction and a rendered page-1 review support the abstract; the paper's later collision verification is located on pp. 28-29. [ev-paper-2024-a-objective-optimization-form, pp. 1, 16-17, 28-29]
 

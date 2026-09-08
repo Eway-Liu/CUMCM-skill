@@ -1,6 +1,6 @@
-# Local source coverage
+# Historical local source coverage
 
-Deterministic source-only inventory; no source file is modified.
+This is the frozen deterministic inventory captured before source removal; no source file was modified during inventorying. The raw files are not distributed with the Skill suite. `../source-retention.json` records that packaging state, while `files.json` preserves path, byte size, and SHA-256 provenance.
 
 | Year | Problem statements | Papers | Attachments | Other |
 |---|---|---:|---:|---:|

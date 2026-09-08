@@ -9,7 +9,7 @@ This policy governs every problem card, paper card, evidence-ledger entry, synth
 | Class | Permitted use | Required treatment |
 |---|---|---|
 | Official problem statements and attachments | Establish problem text, variables, constraints, data, and competition context | Record the official URL or local file path, year, problem letter, and access date |
-| Ten local 2024 paper PDFs | Support paper-card claims when the relevant text-layer page can be inspected directly | Record the stable local file path, document identity, and page or section locator; do not use OCR to fill unreadable content |
+| Ten user-supplied 2024 paper PDFs (removed after distillation) | Support paper-card claims only where the relevant text-layer page was inspected during corpus construction | Preserve the historical path, SHA-256, document identity, and page or section locator; do not present the raw PDF as currently available or use OCR to fill unreadable content |
 | Public case indexes and repository metadata | Discover candidate cases, structure labels, or coverage gaps | Treat as leads only; independently support retained claims from official/local evidence or label them `unverified` |
 | General mathematical-modeling literature and established principles | Support transferable rules not tied to a specific competition paper | Identify the publication or explicitly label the synthesis as `expert-rule` |
 | Inaccessible, broken, or OCR-unreliable material | Preserve provenance and known gaps | Do not infer substantive methods or results; label claims `unverified` |

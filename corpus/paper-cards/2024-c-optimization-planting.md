@@ -11,7 +11,7 @@ tags: [allocation-optimization, crop-planning, land-use, robust-optimization, sc
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024C 基于优化算法的农作物最优种植模型.pdf` (49 pages).
+- Historical source identity: `2024优秀论文/2024C 基于优化算法的农作物最优种植模型.pdf` (49 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-c-optimization-planting`.
 - [observed] Page-aware text extraction is readable on the abstract and problem formulation; rendered page 1 was reviewed. [ev-paper-2024-c-optimization-planting, pp. 1-3]
 

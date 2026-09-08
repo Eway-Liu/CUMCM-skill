@@ -2,7 +2,7 @@
 
 ## Scope and access
 
-This analysis uses only the ten replacement local PDFs in `2024优秀论文`: 3 A, 3 B, and 4 C papers (513 pages total). It uses direct page-aware extraction through macOS PDFKit, with targeted alternate-render review where available; no OCR, other-year excellent papers, or reference-repository case material supplied evidence.
+This analysis was distilled only from the ten replacement local PDFs formerly in `2024优秀论文`: 3 A, 3 B, and 4 C papers (513 pages total). It used direct page-aware extraction through macOS PDFKit, with targeted alternate-render review where available; no OCR, other-year excellent papers, or reference-repository case material supplied evidence. The raw PDFs were removed after distillation; historical paths and SHA-256 values remain in the evidence ledger and source inventory.
 
 | Problem | Cards | Direct text readable | Alternate-render page-1 CJK legible |
 | --- | ---: | ---: | ---: |

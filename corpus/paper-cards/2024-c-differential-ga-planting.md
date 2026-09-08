@@ -11,7 +11,7 @@ tags: [allocation-optimization, crop-planning, genetic-algorithm, differential-e
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024C 基于差分遗传算法的农作物种植策略优化.pdf` (61 pages).
+- Historical source identity: `2024优秀论文/2024C 基于差分遗传算法的农作物种植策略优化.pdf` (61 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-c-differential-ga-planting`.
 - [observed] Native PDFKit page extraction reads the Chinese text layer; the alternate renderer does not map CJK glyphs. [ev-paper-2024-c-differential-ga-planting, pp. 1-2, 42]
 

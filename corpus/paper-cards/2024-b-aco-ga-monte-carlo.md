@@ -11,7 +11,7 @@ tags: [quality-control, acceptance-sampling, decision-tree, monte-carlo, ant-col
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024B 基于蚁群算法与遗传算法优化的蒙特卡洛模拟在生产决策优化中的应用研究.pdf` (28 pages).
+- Historical source identity: `2024优秀论文/2024B 基于蚁群算法与遗传算法优化的蒙特卡洛模拟在生产决策优化中的应用研究.pdf` (28 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-b-aco-ga-monte-carlo`.
 - [observed] Direct text extraction is readable on the reviewed abstract and model pages; page 1 was rendered for visual confirmation. [ev-paper-2024-b-aco-ga-monte-carlo, pp. 1-4]
 

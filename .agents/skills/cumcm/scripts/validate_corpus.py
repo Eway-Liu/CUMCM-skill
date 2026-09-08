@@ -47,6 +47,8 @@ PROBLEM_HEADINGS = (
     "## Candidate validation evidence",
     "## Extraction limitations",
 )
+REMOVED_SOURCE_STATUS = "removed-after-distillation"
+SHA256_RE = re.compile(r"[0-9a-f]{64}", re.I)
 
 
 def _frontmatter(text: str) -> dict[str, object]:
@@ -113,6 +115,44 @@ def _paths(record: dict[str, object]) -> list[str]:
     return result
 
 
+def _hashed_paths(record: dict[str, object]) -> set[str]:
+    result: set[str] = set()
+    local_path = record.get("local_path")
+    if isinstance(local_path, str) and SHA256_RE.fullmatch(str(record.get("sha256", ""))):
+        result.add(local_path)
+    if isinstance(record.get("files"), list):
+        for item in record["files"]:
+            if (
+                isinstance(item, dict)
+                and isinstance(item.get("path"), str)
+                and SHA256_RE.fullmatch(str(item.get("sha256", "")))
+            ):
+                result.add(str(item["path"]))
+    return result
+
+
+def _removed_evidence(corpus_dir: Path, evidence_set: set[str]) -> tuple[set[str], list[str]]:
+    manifest_path = corpus_dir / "source-retention.json"
+    if not manifest_path.exists():
+        return set(), []
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        return set(), [f"{manifest_path}: invalid source-retention manifest: {exc}"]
+    errors: list[str] = []
+    if manifest.get("status") != REMOVED_SOURCE_STATUS:
+        errors.append(f"{manifest_path}: unsupported source-retention status")
+    raw_ids = manifest.get("evidence_ids")
+    if not isinstance(raw_ids, list) or not all(isinstance(item, str) for item in raw_ids):
+        return set(), errors + [f"{manifest_path}: evidence_ids must be a string list"]
+    removed = set(raw_ids)
+    if len(removed) != len(raw_ids):
+        errors.append(f"{manifest_path}: duplicate evidence id")
+    for evidence_id in sorted(removed - evidence_set):
+        errors.append(f"{manifest_path}: unknown evidence id {evidence_id}")
+    return removed, errors
+
+
 def validate_corpus(corpus_dir: Path) -> list[str]:
     corpus_dir = Path(corpus_dir)
     errors: list[str] = []
@@ -149,12 +189,21 @@ def validate_corpus(corpus_dir: Path) -> list[str]:
             if str(ref) not in evidence_set:
                 errors.append(f"{card}: unknown source evidence {ref}")
 
+    removed_evidence, retention_errors = _removed_evidence(corpus_dir, evidence_set)
+    errors.extend(retention_errors)
+
     workspace = corpus_dir.parent
     for record in records:
         evidence_id = str(record.get("evidence_id", "<unknown>"))
+        hashed_paths = _hashed_paths(record)
         for local_path in _paths(record):
-            if not (workspace / local_path).is_file():
-                errors.append(f"{evidence_id}: broken local path {local_path}")
+            if (workspace / local_path).is_file():
+                continue
+            if evidence_id in removed_evidence:
+                if local_path not in hashed_paths:
+                    errors.append(f"{evidence_id}: removed source lacks SHA-256 for {local_path}")
+                continue
+            errors.append(f"{evidence_id}: broken local path {local_path}")
         if record.get("year") == 2025 and str(record.get("problem", "")).upper() == "A":
             source_class = str(record.get("source_class", "")).lower()
             identity = " ".join((evidence_id, source_class, str(record.get("title", "")))).lower()

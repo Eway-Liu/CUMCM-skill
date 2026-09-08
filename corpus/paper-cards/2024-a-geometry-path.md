@@ -11,7 +11,7 @@ tags: [geometry, kinematics, spiral, collision-detection, constrained-optimizati
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024A 基于几何模型的板凳龙运动路径问题.pdf` (45 pages).
+- Historical source identity: `2024优秀论文/2024A 基于几何模型的板凳龙运动路径问题.pdf` (45 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-a-geometry-path`.
 - [observed] The text layer is readable on the reviewed abstract and problem pages; rendered page 1 confirmed the abstract's Chinese text and layout. Equations and all result tables were not transcribed as a substitute for visual review. [ev-paper-2024-a-geometry-path, pp. 1-4]
 

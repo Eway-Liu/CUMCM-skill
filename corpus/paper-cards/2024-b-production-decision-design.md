@@ -11,7 +11,7 @@ tags: [quality-control, acceptance-sampling, dynamic-programming, expected-profi
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024B 生产过程中的决策优化设计.pdf` (37 pages).
+- Historical source identity: `2024优秀论文/2024B 生产过程中的决策优化设计.pdf` (37 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-b-production-decision-design`.
 - [observed] Native PDFKit page extraction reads the Chinese text layer directly. The alternate renderer fails to display most CJK glyphs, so detailed formula/table reading remains unverified. [ev-paper-2024-b-production-decision-design, pp. 1-2, 21-23]
 

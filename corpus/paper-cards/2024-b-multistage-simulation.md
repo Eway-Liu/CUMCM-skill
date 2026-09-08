@@ -11,7 +11,7 @@ tags: [quality-control, acceptance-sampling, multistage-decision, expected-profi
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024B 基于多阶段模拟仿真的生产决策问题.pdf` (70 pages).
+- Historical source identity: `2024优秀论文/2024B 基于多阶段模拟仿真的生产决策问题.pdf` (70 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-b-multistage-simulation`.
 - [observed] Native PDFKit page extraction reads the Chinese text layer directly; the bundled renderer's missing CJK mapping remains a visual-verification limitation. [ev-paper-2024-b-multistage-simulation, pp. 1, 15, 21]
 

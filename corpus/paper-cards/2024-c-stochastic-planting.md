@@ -11,7 +11,7 @@ tags: [allocation-optimization, crop-planning, linear-programming, greedy-baseli
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024C 基于随机优化的农作物种植策略模型.pdf` (58 pages).
+- Historical source identity: `2024优秀论文/2024C 基于随机优化的农作物种植策略模型.pdf` (58 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-c-stochastic-planting`.
 - [observed] Native PDFKit page extraction reads the Chinese text layer directly; the bundled renderer still lacks CJK glyph output. [ev-paper-2024-c-stochastic-planting, pp. 1-3, 15-22]
 

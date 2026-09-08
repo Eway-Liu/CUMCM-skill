@@ -88,12 +88,40 @@ def test_corpus_rejects_duplicate_ids_broken_sources_and_2025a_solutions(tmp_pat
             "source_class": "solution-paper",
             "label": "observed",
         },
+        {
+            "evidence_id": "ev-removed-source",
+            "year": 2024,
+            "problem": "B",
+            "source_class": "problem-statement",
+            "local_path": "removed.pdf",
+            "sha256": "0" * 64,
+            "label": "observed",
+        },
+        {
+            "evidence_id": "ev-removed-unhashed",
+            "year": 2024,
+            "problem": "C",
+            "source_class": "problem-statement",
+            "local_path": "removed-unhashed.pdf",
+            "label": "observed",
+        },
     ]
     (corpus / "evidence-ledger.jsonl").write_text(
         "".join(json.dumps(row) + "\n" for row in records), encoding="utf-8"
+    )
+    (corpus / "source-retention.json").write_text(
+        json.dumps(
+            {
+                "status": "removed-after-distillation",
+                "evidence_ids": ["ev-removed-source", "ev-removed-unhashed"],
+            }
+        ),
+        encoding="utf-8",
     )
     errors = validate_corpus(corpus)
     joined = " ".join(errors)
     assert "duplicate card id" in joined
     assert "broken local path" in joined
+    assert "ev-removed-source: broken local path" not in joined
+    assert "ev-removed-unhashed: removed source lacks SHA-256" in joined
     assert "forbidden 2025 A solution evidence" in joined

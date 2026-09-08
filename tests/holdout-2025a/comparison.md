@@ -12,7 +12,7 @@ Embargo state at scoring time: retained. This assessment used only the official 
 | `2025试题/A题/附件/result2.xlsx` | Q4 output schema | `c681d5e378538f71c77fca199a3ca8303a04dbcfc7bd95f870ae22f01ab69f91` |
 | `2025试题/A题/附件/result3.xlsx` | Q5 output schema and missile assignment field | `b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a` |
 
-The submitted artifact is [independent-solution.md](independent-solution.md), frozen with SHA-256 `419431988af12c9c28dd937cd6e7220cedd5ba0b28154cf41fcb94e263101d1d`. The evidence files are unchanged; hashes match the source inventory.
+The submitted artifact is [independent-solution.md](independent-solution.md), frozen with SHA-256 `419431988af12c9c28dd937cd6e7220cedd5ba0b28154cf41fcb94e263101d1d`. At evaluation time the evidence-file hashes matched the source inventory; the raw files were later removed after distillation, and their identities remain frozen in that inventory.
 
 ## Ten-output rubric
 

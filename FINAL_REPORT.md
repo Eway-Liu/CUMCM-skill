@@ -6,7 +6,7 @@ Status: implemented and verified in an isolated worktree
 
 ## Outcome
 
-The project now contains four low-coupling, discoverable CUMCM Skills backed by a source inventory, structured problem/paper cards, an explicit bidirectional structure-model index, evidence-linked synthesis, reusable templates/scripts, RED/GREEN pressure tests, a problem-only 2025 A hold-out, a separately isolated post-release paper review, an independently rewritten hybrid forecast-to-optimization workflow, and evidence-gated writing/innovation refinements.
+The project now contains four low-coupling, discoverable CUMCM Skills backed by a frozen historical source inventory, structured problem/paper cards, an explicit bidirectional structure-model index, evidence-linked synthesis, reusable templates/scripts, RED/GREEN pressure tests, a problem-only 2025 A hold-out, a separately isolated post-release paper review, an independently rewritten hybrid forecast-to-optimization workflow, and evidence-gated writing/innovation refinements. Raw contest and paper files were removed after distillation; provenance paths, byte sizes, and SHA-256 values remain for audit.
 
 The system transfers decision rules rather than memorized topic-to-algorithm mappings: formalize the real event and constraints, choose a structure-compatible baseline, justify added complexity, execute failure-mode-specific validation, design only purpose-led figures, and keep every manuscript claim traceable to a current artifact.
 
@@ -27,9 +27,9 @@ The four entrypoints contain 498, 484, 342 and 365 words respectively. Detailed 
 
 ## Corpus Summary
 
-### Local 2022–2025 inventory
+### Historical 2022–2025 source inventory
 
-The deterministic source inventory contains **59 files**:
+The deterministic inventory records **59 source files present during analysis**. These raw files are no longer distributed with the Skill suite; `corpus/source-retention.json` records their removal state.
 
 | Class | Count |
 | --- | ---: |
@@ -42,8 +42,8 @@ Formats: 32 XLSX, 22 PDF, 3 DOC and 2 GIF. Generated files, caches, symlinks and
 
 ### Structured evidence
 
-- 18 problem cards cover 2020–2025 A/B/C. The 12 local 2022–2025 statements are supplemented by six 2020–2021 statement cards from a pinned repository mirror; their uninspected attachments remain metadata-only.
-- 10 paper cards cover every user-selected local 2024 paper: 3 A, 3 B and 4 C. Together they contain 39 explicit subquestion records; every record exposes Goal, Variables, Assumptions, Data Processing, Baseline, Model, Algorithm, Validation, Visualization and Main Result, followed by separate Strong Points, Weak Points, Transferable Patterns and Problem-Specific Tricks.
+- 18 problem cards cover 2020–2025 A/B/C. The 12 statements supplied locally for 2022–2025 are supplemented by six 2020–2021 statement cards from a pinned repository mirror; their uninspected attachments remain metadata-only.
+- 10 paper cards cover every user-selected 2024 paper: 3 A, 3 B and 4 C. Together they contain 39 explicit subquestion records; every record exposes Goal, Variables, Assumptions, Data Processing, Baseline, Model, Algorithm, Validation, Visualization and Main Result, followed by separate Strong Points, Weak Points, Transferable Patterns and Problem-Specific Tricks.
 - The 2024 papers total 513 pages. Page-aware extraction found readable text on every page; representative equation/result/validation pages were inspected, with unreadable visual details left `unverified`.
 - The evidence ledger contains 44 unique records: 18 problem statements, 10 local paper PDFs, 10 local attachment groups and 6 attachment-metadata records.
 - `corpus/corpus-analysis.md` and two compact evidence-linked pattern references preserve cross-paper synthesis without copying paper language.

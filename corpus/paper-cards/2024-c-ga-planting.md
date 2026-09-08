@@ -11,7 +11,7 @@ tags: [allocation-optimization, crop-planning, genetic-algorithm, uncertainty, c
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024C 基于遗传算法的最优种植策略.pdf` (45 pages).
+- Historical source identity: `2024优秀论文/2024C 基于遗传算法的最优种植策略.pdf` (45 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-c-ga-planting`.
 - [observed] Readable page-aware extraction and a rendered page-1 review support the abstract. [ev-paper-2024-c-ga-planting, pp. 1-3]
 

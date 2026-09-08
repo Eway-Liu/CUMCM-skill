@@ -11,7 +11,7 @@ tags: [geometry, kinematics, spiral, collision-detection, numerical-search, part
 
 ## Source and evidence quality
 
-- Local source: `2024优秀论文/2024A 基于动态搜索的“板凳龙”运动状态及路线研究.pdf` (58 pages).
+- Historical source identity: `2024优秀论文/2024A 基于动态搜索的“板凳龙”运动状态及路线研究.pdf` (58 pages; raw PDF removed after distillation).
 - Evidence: `ev-paper-2024-a-dynamic-search-route`.
 - [observed] Native macOS PDFKit page-by-page extraction recovers readable Chinese directly from the PDF text layer. The separate bundled renderer still omits CJK glyphs on p. 1, so equations/tables were not reconstructed from that render. [ev-paper-2024-a-dynamic-search-route, pp. 1, 13, 16-17, 26, 28-29]
 

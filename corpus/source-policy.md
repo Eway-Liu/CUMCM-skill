@@ -9,13 +9,12 @@ This policy governs every problem card, paper card, evidence-ledger entry, synth
 | Class | Permitted use | Required treatment |
 |---|---|---|
 | Official problem statements and attachments | Establish problem text, variables, constraints, data, and competition context | Record the official URL or local file path, year, problem letter, and access date |
-| Official excellent-paper exhibits and official or expert reviews | Support claims about reported methods, validation, figures, and results | Cite the exact exhibit or review and a page, section, figure, or other locator |
-| Local paper PDFs | Support paper-card claims when the relevant content can be inspected | Record the stable local file path, document identity, and page or section locator |
+| Ten local 2024 paper PDFs | Support paper-card claims when the relevant text-layer page can be inspected directly | Record the stable local file path, document identity, and page or section locator; do not use OCR to fill unreadable content |
 | Public case indexes and repository metadata | Discover candidate cases, structure labels, or coverage gaps | Treat as leads only; independently support retained claims from official/local evidence or label them `unverified` |
 | General mathematical-modeling literature and established principles | Support transferable rules not tied to a specific competition paper | Identify the publication or explicitly label the synthesis as `expert-rule` |
 | Inaccessible, broken, or OCR-unreliable material | Preserve provenance and known gaps | Do not infer substantive methods or results; label claims `unverified` |
 
-The public `math-modeling-skill-pro` repository may be used only for gap discovery and retrieval-design comparison. Its cards, knowledge documents, scripts, templates, and proprietary wording must not be copied into this project.
+The public `math-modeling-skill-pro` repository may be used only for architecture and retrieval-design comparison. Its case data are not corpus evidence; its cards, knowledge documents, scripts, templates, and proprietary wording must not be copied into this project.
 
 ## Evidence labels
 
@@ -28,9 +27,9 @@ Every substantive claim about a method, validation procedure, figure, result, or
 
 An `unverified` claim may document a gap or lead, but it must not become a mandatory Skill rule. Changing a label requires recording the stronger evidence that justifies the change.
 
-## OCR limitations and review
+## Text-layer and visual-verification limitations
 
-OCR output is an aid, not authoritative evidence. For OCR-derived material, record the source file or URL, page range, OCR tool and version when known, recognition date, and confidence or review status. Equations, subscripts, symbols, units, table cells, figure labels, and Chinese characters that affect meaning require comparison with the rendered page. If the rendered source cannot resolve an ambiguity, quote no uncertain text, make no method/result claim from it, and use `unverified`. OCR completion alone never establishes that a paper, program, or numerical result is reproducible.
+All ten selected PDFs have a directly extractable text layer on every page. OCR output is outside the selected corpus workflow and must not support any retained claim. Use page-aware text extraction for analysis and inspect rendered pages for equations, subscripts, symbols, units, table cells, and figure labels. Content that cannot be confirmed reliably must be labeled `unverified`; do not reconstruct it from OCR caches. Text extraction or visual inspection alone never establishes that a paper's program or numerical result is reproducible.
 
 ## Copyright boundaries
 
@@ -46,15 +45,13 @@ Each evidence record must include, as applicable:
 - repository-relative or stable local file path for local material;
 - page, section, table, figure, sheet, or row locator;
 - evidence label and a concise statement of what the source supports;
-- OCR and manual-review status;
+- text-layer extraction and targeted visual-review status;
 - retrieval failure, link failure, or access restriction when relevant.
 
 URLs and file paths identify where evidence came from; they do not by themselves prove that the stated content was inspected. Mirrors should retain the canonical-source identity, and moved local files must be updated in the ledger rather than silently losing provenance.
 
-## 2025 A hold-out embargo
+## 2025 A permanent solution exclusion
 
-The 2025 A problem statement and its official attachments may be indexed and used to prepare the independent hold-out input. Until the Task 9 independent solution has been completed, saved under `tests/holdout-2025a/`, and timestamped, no agent, Skill author, corpus process, or test may read or encode any 2025 A solution paper, excellent-paper exhibit, expert review, solution commentary, or source that reveals solution methods.
+The 2025 A problem statement and its official attachments may be indexed and used to prepare the independent hold-out input. No agent, Skill author, corpus process, or test may read or encode any 2025 A solution paper, excellent-paper exhibit, expert review, solution commentary, or source that reveals solution methods.
 
-Before release, the 2025 A evidence ledger may contain problem sources only. The embargo does not apply to 2025 B/C evidence. After the independent solution is immutably saved, Task 9 may release the embargo, inspect at least one official excellent paper and an official or expert review, and record all newly added evidence as post-hold-out. The comparison must judge mathematical structure, constraints, validation, sensitivity, figures, and justification; use of a different model is not a failure by itself.
-
-
+The 2025 A evidence ledger may contain problem sources only. Task 9 evaluates the independent solution against the problem statement, attachments, internal consistency, and transferable rules derived from the ten local 2024 papers. The exclusion is not released during this implementation.

@@ -15,6 +15,7 @@ import re
 KIND_ORDER = {"problem": 0, "attachment": 1, "paper": 2, "other": 3}
 GENERATED_DIRS = {"corpus", "docs", "tests", "tmp", "output", "outputs", "node_modules", "__pycache__"}
 ATTACHMENT_EXTENSIONS = {".xlsx", ".xls", ".csv", ".tsv", ".gif", ".png", ".jpg", ".jpeg", ".bmp", ".zip", ".rar", ".mat"}
+YEAR_PROBLEM_PATTERN = r"(?:cumcm)?20\d{2}-?([a-e])(?=$|[.\s-])"
 
 
 def identify(path: Path):
@@ -24,7 +25,7 @@ def identify(path: Path):
     for part in reversed(path.parts):
         match = re.search(r"([A-E])(?:题|\d{3})", part, re.IGNORECASE)
         if not match:
-            match = re.fullmatch(r"(?:cumcm)?20\d{2}([a-e])(?:\.[^.]+)?", part, re.IGNORECASE)
+            match = re.match(YEAR_PROBLEM_PATTERN, part, re.IGNORECASE)
         if match:
             problem = match[1].upper()
             break
@@ -33,7 +34,7 @@ def identify(path: Path):
         kind = "paper"
     elif path.suffix.lower() in {".pdf", ".doc", ".docx"} and (
         re.fullmatch(r"[A-E]题", path.stem, re.IGNORECASE)
-        or re.fullmatch(r"cumcm20\d{2}[a-e]", path.stem, re.IGNORECASE)
+        or re.match(YEAR_PROBLEM_PATTERN, path.stem, re.IGNORECASE)
     ):
         kind = "problem"
     elif path.suffix.lower() in ATTACHMENT_EXTENSIONS:

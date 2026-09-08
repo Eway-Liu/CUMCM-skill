@@ -414,85 +414,94 @@
     "sha256": "14827156218bd4f7e4f16db4aa6d9f757c6648379e038ae6c6b58383648614af"
   },
   {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文A016.pdf",
+    "path": "2024优秀论文/2024A 基于几何模型的板凳龙运动路径问题.pdf",
     "kind": "paper",
     "year": 2024,
     "problem": "A",
     "extension": ".pdf",
-    "size_bytes": 3747478,
-    "sha256": "3c31e6b79e4dd811769a36adce813fa2c51ed5cd5d329ebc179cebd73d919e87"
+    "size_bytes": 6381501,
+    "sha256": "e8fa3686a1c31fb593754689cec0fe4a4de5a0951ed6beff398d4f4a87bbc9d5"
   },
   {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文A053.pdf",
+    "path": "2024优秀论文/2024A 基于动态搜索的“板凳龙”运动状态及路线研究.pdf",
     "kind": "paper",
     "year": 2024,
     "problem": "A",
     "extension": ".pdf",
-    "size_bytes": 4920008,
-    "sha256": "f53f275f014c84cedff62d9859d0eada05a65dc9440d550d6c0a9f37a731f27d"
+    "size_bytes": 15730424,
+    "sha256": "5f24d39c2723a1a6bb2c3f24892ebaa3eac7242711bc9fbeb163feb36f4e1d11"
   },
   {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文A163.pdf",
+    "path": "2024优秀论文/2024A 基于目标优化的板凳龙形态调节.pdf",
     "kind": "paper",
     "year": 2024,
     "problem": "A",
     "extension": ".pdf",
-    "size_bytes": 3179601,
-    "sha256": "7544ee73ddf8a1f41005181c043912825bfcb556ddf68a864d09262f1e4cc5e9"
+    "size_bytes": 4123344,
+    "sha256": "4949f4d578a13162c2250e923b3797f4bb7c7885902971567047e7c48beb7600"
   },
   {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文A242.pdf",
-    "kind": "paper",
-    "year": 2024,
-    "problem": "A",
-    "extension": ".pdf",
-    "size_bytes": 4999901,
-    "sha256": "ca1134bacaae3362fa71c1fad768ed04b825928f3ad27c172165c973fe767b23"
-  },
-  {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文B159.pdf",
+    "path": "2024优秀论文/2024B 基于多阶段模拟仿真的生产决策问题.pdf",
     "kind": "paper",
     "year": 2024,
     "problem": "B",
     "extension": ".pdf",
-    "size_bytes": 2625628,
-    "sha256": "32dc4af8a74714d28c3874b7bac72e49adcbc632267ca61b6c5c9485e69ed483"
+    "size_bytes": 1341310,
+    "sha256": "7fde34aeec505b728238a68a3ba33896f047fafeb09a77bd5e723beea7534ab5"
   },
   {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文B195.pdf",
+    "path": "2024优秀论文/2024B 基于蚁群算法与遗传算法优化的蒙特卡洛模拟在生产决策优化中的应用研究.pdf",
     "kind": "paper",
     "year": 2024,
     "problem": "B",
     "extension": ".pdf",
-    "size_bytes": 5129020,
-    "sha256": "ad70b8d4c356c679ec18afd964ecee1512c1c6d517f6122daae626f33011193b"
+    "size_bytes": 2171340,
+    "sha256": "e54f4e9f8bff9f057e54cf7070089dedd4b0f052584ca2b71903cc429bdfb053"
   },
   {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文B196.pdf",
+    "path": "2024优秀论文/2024B 生产过程中的决策优化设计.pdf",
     "kind": "paper",
     "year": 2024,
     "problem": "B",
     "extension": ".pdf",
-    "size_bytes": 2360690,
-    "sha256": "3b057b44ee1dbd3938c9c6f95326cc19d1729a93b48bf1e18df3d8250a1a3dfc"
+    "size_bytes": 5899916,
+    "sha256": "e2757efcd38572a682983d02fd1e7b91cf383e27532c274539d3f53c3421f5b6"
   },
   {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文C063.pdf",
+    "path": "2024优秀论文/2024C 基于优化算法的农作物最优种植模型.pdf",
     "kind": "paper",
     "year": 2024,
     "problem": "C",
     "extension": ".pdf",
-    "size_bytes": 3845019,
-    "sha256": "df3e21ca53c0c83192782144a137c1a927e46bf28afb78b6f64078e3e9a14145"
+    "size_bytes": 1735093,
+    "sha256": "819b80f5d2f04057b1fe11f2513fd144ebc61001e1bf1417c7cb444c14094402"
   },
   {
-    "path": "2024优秀论文/2024高教社杯数学建模国赛论文C234.pdf",
+    "path": "2024优秀论文/2024C 基于差分遗传算法的农作物种植策略优化.pdf",
     "kind": "paper",
     "year": 2024,
     "problem": "C",
     "extension": ".pdf",
-    "size_bytes": 3280499,
-    "sha256": "edd1c4d8a9fb3d28283c09e02885463533737c768d10428d780262b959b3c80e"
+    "size_bytes": 5215902,
+    "sha256": "a490a9540dd01535300199bbd5706229165e9dbbbc2e5358ea84a52207abcd55"
+  },
+  {
+    "path": "2024优秀论文/2024C 基于遗传算法的最优种植策略.pdf",
+    "kind": "paper",
+    "year": 2024,
+    "problem": "C",
+    "extension": ".pdf",
+    "size_bytes": 2494946,
+    "sha256": "cca0306586c9f2b808ae4208459a12b050d3f71e58785d1470f89d19f0c3df0e"
+  },
+  {
+    "path": "2024优秀论文/2024C 基于随机优化的农作物种植策略模型.pdf",
+    "kind": "paper",
+    "year": 2024,
+    "problem": "C",
+    "extension": ".pdf",
+    "size_bytes": 1353484,
+    "sha256": "719bc71e72888c2e343e62182661feae4b7c8524b8fa8ac00a9daf77f19cacb5"
   },
   {
     "path": "2022试题/format2022.doc",

@@ -6,19 +6,19 @@
 
 **Architecture:** Project-scoped Skills live under `.agents/skills/` and exchange explicit problem, model, figure, and thesis contracts. A separate `corpus/` evidence layer stores inventories and structured cards; Skill entrypoints load only the references needed for the current task. Python standard-library-first scripts build and validate the corpus, while focused scientific helpers use installed NumPy, pandas, matplotlib, and scikit-learn only when required.
 
-**Tech Stack:** Markdown/YAML, Python 3.11+, pytest, JSON/JSONL, Poppler (`pdfinfo`, `pdftotext`, `pdftoppm`), optional OCR, pandas, NumPy, matplotlib, scikit-learn.
+**Tech Stack:** Markdown/YAML, Python 3.11+, pytest, JSON/JSONL, Poppler (`pdfinfo`, `pdftotext`, `pdftoppm`), pandas, NumPy, matplotlib, scikit-learn.
 
 **Spec:** `docs/superpowers/specs/2026-09-07-cumcm-skill-suite-design.md`
 
 ## Global Constraints
 
 - Cover all 18 CUMCM A/B/C problems from 2020 through 2025; prioritize A-problem mechanism, geometry, physics, engineering constraints, numerical solution, and validation.
-- Fully analyze the nine local 2024 excellent papers and add external official-paper coverage across years and problem letters; B/C must include at least one paper per year when accessible.
+- Analyze only the ten local 2024 excellent papers (3 A, 3 B, 4 C); read their verified text layers directly and do not use OCR outputs or external-year excellent papers as corpus evidence.
 - Treat `math-modeling-skill-pro` as read-only research evidence; do not copy its proprietary cards, code, templates, or wording.
 - Keep each `SKILL.md` focused on triggers, workflow, gates, routing, contracts, and reference navigation; put detailed knowledge in references.
 - Select models from mathematical structure, data conditions, objective, constraints, scale, interpretability, and uncertainty—not from topic keywords.
 - Complex models require a meaningful baseline and validation; every paper number must be traceable to a computation result.
-- Use 2025 A as a hold-out: do not read its paper solution or expert review before the independent Skill run is saved.
+- Use 2025 A as a problem-only hold-out and never read its paper solution or expert review in this implementation.
 - Create files with `apply_patch`; preserve all existing problem, attachment, and paper files.
 - Finish and verify one Skill before writing the next Skill.
 - Commit after every independently testable task.
@@ -165,7 +165,7 @@ pytest -q tests/python/test_build_inventory.py
 python .agents/skills/cumcm/scripts/build_inventory.py --root . --output corpus/inventory/files.json --coverage corpus/inventory/coverage.md
 ```
 
-Expected: PASS; coverage lists local 2022–2025 problems, nine local papers, spreadsheets, images, and document-format files without modifying them.
+Expected: PASS; coverage lists local 2022–2025 problems, ten local 2024 papers, spreadsheets, images, and document-format files without modifying them.
 
 - [ ] **Step 5: Acquire only missing 2020–2021 A/B/C problem sources**
 
@@ -220,24 +220,24 @@ Expected: 18 cards; `rg -L` prints nothing; the 2025 A evidence ledger contains 
 - Modify: `corpus/evidence-ledger.jsonl`
 
 **Interfaces:**
-- Consumes: local PDFs, official China University Student Online paper exhibits, public metadata from `math-modeling-skill-pro`, and the source policy.
+- Consumes: the ten local 2024 text-layer PDFs, targeted page renderings used to verify equations/figures/tables, and the source policy.
 - Produces: paper cards keyed by paper code; cross-corpus patterns cited by evidence IDs; an A-focused decision reference.
 
-- [ ] **Step 1: Extract the nine local 2024 papers**
+- [ ] **Step 1: Directly inspect the ten local 2024 papers**
 
-Run `pdfinfo` and `pdftotext -layout` on each local paper into a temporary extraction directory. Render and inspect representative pages containing the abstract, model diagram/equations, validation, sensitivity, figures, and conclusion. Record text-layer or OCR quality per paper.
+Extract the verified text layer without OCR and retain stable page locators. Render and visually inspect representative pages containing the abstract, model diagram/equations, validation, sensitivity, figures, and conclusion. Mark text-layer extraction errors or unreadable formulas, units, and numbers `unverified`; never reconstruct them from OCR output.
 
 - [ ] **Step 2: Create one structured card per local paper**
 
 Use the paper-card contract from the design spec. Every claim about a method, validation, figure, or result must cite a local PDF evidence ID and mark `observed` or `inferred`.
 
-- [ ] **Step 3: Add external official-paper coverage without contaminating hold-out**
+- [ ] **Step 3: Complete balanced 2024 A/B/C coverage**
 
-For 2020–2024, deep-read official A-paper exhibits first. Add B/C coverage for each year when accessible and continue sampling until three consecutive papers introduce no new structure, model-selection condition, or validation rule. For 2025, allow B/C evidence now but embargo all A solution and expert-review content until Task 9.
+Analyze all three local A papers, all three local B papers, and all four local C papers. Give A papers deeper attention to mechanism, geometry, constraints, numerical methods, units, and cross-paper disagreement. Do not add external paper cards.
 
-- [ ] **Step 4: Use the reference repository as a gap-finding index**
+- [ ] **Step 4: Separate observed patterns from expert rules**
 
-Inspect public case/index metadata from `math-modeling-skill-pro` to identify missing structures or validation categories. Add no claim solely because the reference repository states it; re-support retained claims with official/local sources or label them `unverified` and exclude them from mandatory Skill rules.
+Use the reference repository only as prior architectural inspiration. Do not use its case data as corpus evidence. Each retained paper pattern must resolve to one or more local 2024 paper evidence IDs; general modeling guidance must be labeled `expert-rule`.
 
 - [ ] **Step 5: Synthesize transferable rules**
 
@@ -250,14 +250,14 @@ Write `excellent-paper-patterns.md` as concise, evidence-linked decision rules. 
 Run:
 
 ```bash
-test "$(find corpus/paper-cards -name '2024-*.md' | wc -l | tr -d ' ')" -ge "9"
+test "$(find corpus/paper-cards -name '2024-*.md' | wc -l | tr -d ' ')" = "10"
 rg -n "observed|inferred" corpus/paper-cards
 rg -n "2025-A.*solution|A196|烟幕.*论文" corpus/paper-cards corpus/corpus-analysis.md .agents/skills/cumcm/references || true
 git add corpus/paper-cards corpus/corpus-analysis.md corpus/evidence-ledger.jsonl .agents/skills/cumcm/references
 git commit -m "feat: distill CUMCM paper evidence"
 ```
 
-Expected: nine local cards exist; external coverage is documented; the hold-out scan contains no 2025 A solution evidence.
+Expected: exactly ten local 2024 cards exist; all paper-pattern evidence resolves to those cards; the hold-out scan contains no 2025 A solution evidence.
 
 ### Task 4: Implement Corpus Search and Structural Validation
 
@@ -309,7 +309,7 @@ Expected: FAIL because both modules and functions are absent.
 
 - [ ] **Step 3: Implement minimal structure-aware retrieval and validation**
 
-Use normalized English/Chinese tokens plus explicit boosts for frontmatter tags, problem type, data regime, objective, constraint type, and validation. Topic terms may contribute but must not alone decide the model. Validator checks required headings, source IDs, evidence labels, duplicate IDs, broken local paths, and forbidden 2025 A solution evidence before release of the embargo.
+Use normalized English/Chinese tokens plus explicit boosts for frontmatter tags, problem type, data regime, objective, constraint type, and validation. Topic terms may contribute but must not alone decide the model. Validator checks required headings, source IDs, evidence labels, duplicate IDs, broken local paths, and permanently forbidden 2025 A solution evidence.
 
 - [ ] **Step 4: Run tests and validate the real corpus**
 
@@ -613,8 +613,8 @@ git commit -m "feat: add CUMCM thesis skill"
 - Modify: `docs/superpowers/specs/2026-09-07-cumcm-skill-suite-design.md`
 
 **Interfaces:**
-- Consumes: all four completed Skills, corpus, tests, 2025 A problem card, then post-embargo official paper/review evidence.
-- Produces: automated suite validation, observable discovery evidence, hold-out comparison, and final delivery report.
+- Consumes: all four completed Skills, corpus, tests, and the 2025 A problem card without any solution-paper or expert-review evidence.
+- Produces: automated suite validation, observable discovery evidence, a problem-only hold-out assessment, and final delivery report.
 
 - [ ] **Step 1: Write a failing suite-validator test**
 
@@ -662,9 +662,9 @@ Implement `validate_suite(root: Path) -> list[str]` and a CLI that validates the
 
 Give a fresh agent the 2025 A problem and attachments plus the four Skills, but no solution paper, expert review, or hidden corpus notes. Require the ten outputs listed in the design spec and save the complete response to `independent-solution.md`.
 
-- [ ] **Step 4: Release the embargo and compare**
+- [ ] **Step 4: Assess the hold-out without releasing the embargo**
 
-Read at least one official 2025 A excellent paper and the official/expert problem review. Compare mathematical structure, key constraints, candidate models, validation, sensitivity, figures, and paper plan. Do not penalize a different model when it is well justified. Save evidence-linked findings and limitations to `comparison.md`, then update the evidence ledger and corpus analysis with clearly post-hold-out evidence.
+Compare the independent output against the 2025 A problem statement and attachments only: mathematical structure, key constraints, variable definitions, feasibility, validation, sensitivity, figures, and paper plan. Save evidence-linked findings and limitations to `comparison.md`. Do not read or add 2025 A excellent-paper or expert-review evidence.
 
 - [ ] **Step 5: Verify Skill discovery in the actual runtime**
 
@@ -673,7 +673,7 @@ Check that `.agents/skills/` is scanned by the current Codex runtime using a fre
 - [ ] **Step 6: Run the complete verification suite**
 
 ```bash
-python .agents/skills/cumcm/scripts/validate_corpus.py corpus --release-2025a
+python .agents/skills/cumcm/scripts/validate_corpus.py corpus
 python .agents/skills/cumcm/scripts/validate_skills.py .agents/skills
 python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm
 python /Users/eway/.codex/skills/.system/skill-creator/scripts/quick_validate.py .agents/skills/cumcm-modeling

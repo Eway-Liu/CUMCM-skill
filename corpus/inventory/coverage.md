@@ -8,21 +8,21 @@ Deterministic source-only inventory; no source file is modified.
 | 2021 | none locally | 0 | 0 | 0 |
 | 2022 | A, B, C | 0 | 8 | 1 |
 | 2023 | A, B, C | 0 | 10 | 1 |
-| 2024 | A, B, C | 9 | 8 | 1 |
+| 2024 | A, B, C | 10 | 8 | 1 |
 | 2025 | A, B, C | 0 | 8 | 0 |
 
 ## Totals
 
 - problem: 12
 - attachment: 34
-- paper: 9
+- paper: 10
 - other: 3
 
 ## File formats
 
 - `.doc`: 3
 - `.gif`: 2
-- `.pdf`: 21
+- `.pdf`: 22
 - `.xlsx`: 32
 
 ## Scope and gaps

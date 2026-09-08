@@ -1,6 +1,8 @@
 from pathlib import Path
 from importlib.util import module_from_spec, spec_from_file_location
 
+import pytest
+
 
 def load_module(path: Path):
     spec = spec_from_file_location("build_inventory", path)
@@ -42,3 +44,29 @@ def test_inventory_is_stable_and_excludes_generated_and_hidden_files(tmp_path):
     assert rows[0]["sha256"] == hashlib.sha256(b"problem").hexdigest()
     assert rows[1]["kind"] == "other"
     assert rows[1]["problem"] is None
+
+
+@pytest.mark.parametrize("relative, expected", [
+    ("2024优秀论文/2024A 基于几何模型的板凳龙运动路径问题.pdf", (2024, "A", "paper")),
+    ("cumcm2021/cumcm2021a/CUMCM2021-A.pdf", (2021, "A", "problem")),
+    ("cumcm2020/cumcm2020a/2020A-炉温曲线.docx", (2020, "A", "problem")),
+])
+def test_identify_year_letter_filenames(relative, expected):
+    module = load_module(Path(".agents/skills/cumcm/scripts/build_inventory.py"))
+    assert module.identify(Path(relative)) == expected
+
+
+@pytest.mark.parametrize("filename", ["2025A synthetic.pdf", "A016.pdf"])
+def test_inventory_skips_holdout_paper_before_opening(tmp_path, monkeypatch, filename):
+    paper = tmp_path / "2025优秀论文" / filename
+    paper.parent.mkdir()
+    paper.write_bytes(b"synthetic hold-out fixture")
+    module = load_module(Path(".agents/skills/cumcm/scripts/build_inventory.py"))
+    original_open = Path.open
+
+    def guarded_open(path, *args, **kwargs):
+        assert path != paper, "Hold-out paper content must not be opened"
+        return original_open(path, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "open", guarded_open)
+    assert module.build_inventory(tmp_path) == []

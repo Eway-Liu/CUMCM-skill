@@ -1,0 +1,4 @@
+interface:
+  display_name: "CUMCM Thesis"
+  short_description: "Write and audit evidence-traceable CUMCM papers"
+  default_prompt: "Use $cumcm-thesis to draft this section from the verified model, result, and figure manifests."

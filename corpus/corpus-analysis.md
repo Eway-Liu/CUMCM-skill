@@ -1,0 +1,53 @@
+# 2024 local excellent-paper corpus analysis
+
+## Scope and access
+
+This analysis uses only the ten replacement local PDFs in `2024优秀论文`: 3 A, 3 B, and 4 C papers (513 pages total). It uses direct page-aware extraction through macOS PDFKit, with targeted alternate-render review where available; no OCR, other-year excellent papers, or reference-repository case material supplied evidence.
+
+| Problem | Cards | Direct text readable | Alternate-render page-1 CJK legible |
+| --- | ---: | ---: | ---: |
+| A | 3 | 3 | 2 |
+| B | 3 | 3 | 1 |
+| C | 4 | 4 | 2 |
+| Total | 10 | 10 | 5 |
+
+- [observed] All ten evidence records are local-PDF records with page locators and SHA-256 values; PDFKit extracted readable text on every page of every selected source. [ev-paper-2024-a-geometry-path, pp. 1-45; ev-paper-2024-a-dynamic-search-route, pp. 1-58; ev-paper-2024-a-objective-optimization-form, pp. 1-62; ev-paper-2024-b-multistage-simulation, pp. 1-70; ev-paper-2024-b-aco-ga-monte-carlo, pp. 1-28; ev-paper-2024-b-production-decision-design, pp. 1-37; ev-paper-2024-c-optimization-planting, pp. 1-49; ev-paper-2024-c-differential-ga-planting, pp. 1-61; ev-paper-2024-c-ga-planting, pp. 1-45; ev-paper-2024-c-stochastic-planting, pp. 1-58]
+- [observed] Targeted source pages include A collision/sensitivity checks, B result/evaluation or robustness, and C sensitivity/robust selection; the alternate renderer lacks CJK glyph support for five PDFs, so unreviewed figure/table details remain unverified. [ev-paper-2024-a-dynamic-search-route, pp. 13, 16-17, 26, 28-29; ev-paper-2024-a-objective-optimization-form, pp. 16-17, 28-29; ev-paper-2024-b-aco-ga-monte-carlo, pp. 20-22; ev-paper-2024-b-multistage-simulation, pp. 15, 21; ev-paper-2024-b-production-decision-design, pp. 21-23; ev-paper-2024-c-optimization-planting, pp. 18, 27; ev-paper-2024-c-differential-ga-planting, p. 42]
+
+## Observed structures and reported practices
+
+| Structure | Count in selected cards | Observed support | Validity boundary |
+| --- | ---: | --- | --- |
+| Geometry/kinematics with collision constraints | 3 A | Spiral, linked-handle recurrences, tangent turnaround, collision screening. [observed] [ev-paper-2024-a-geometry-path, pp. 1-4; ev-paper-2024-a-dynamic-search-route, pp. 1, 13; ev-paper-2024-a-objective-optimization-form, pp. 1-3] | No paper establishes that its screening reduction is universally complete. |
+| Constrained pitch/speed optimization | 3 A | Pitch and speed objectives are coupled to geometry constraints. [observed] [ev-paper-2024-a-geometry-path, pp. 1-4; ev-paper-2024-a-dynamic-search-route, pp. 1, 16-17, 28-29; ev-paper-2024-a-objective-optimization-form, pp. 1-3] | One abstract displays inconsistent speed units, so numeric comparison is unsafe. |
+| Quality-control decision graph | 3 B | Sampling, inspect/disassemble decisions, feedback loops, expected-profit comparison. [observed] [ev-paper-2024-b-multistage-simulation, pp. 1-2; ev-paper-2024-b-aco-ga-monte-carlo, pp. 1-4, 7-9; ev-paper-2024-b-production-decision-design, pp. 1-2] | The reported distributional approximations and thresholds are not independently validated. |
+| Planting allocation under operational constraints | 4 C | Area variables, land/rotation/legume/season and surplus-sale constraints. [observed] [ev-paper-2024-c-optimization-planting, pp. 1-3; ev-paper-2024-c-differential-ga-planting, pp. 1-2; ev-paper-2024-c-ga-planting, pp. 1-3; ev-paper-2024-c-stochastic-planting, pp. 1-3] | Solver output is not a proof of optimality without formulation and reproducibility checks. |
+| Uncertainty / robustness extension | 7 B/C cards | Defect scenarios; Bayesian updates; demand/yield/cost/price variation; CVaR, hazard factors, or robust selection. [observed] [ev-paper-2024-b-multistage-simulation, p. 1; ev-paper-2024-b-aco-ga-monte-carlo, pp. 20-22; ev-paper-2024-b-production-decision-design, p. 1; ev-paper-2024-c-optimization-planting, pp. 1, 18, 27; ev-paper-2024-c-differential-ga-planting, pp. 1, 25-30, 42; ev-paper-2024-c-ga-planting, pp. 1-3; ev-paper-2024-c-stochastic-planting, pp. 1-3] | Frequency does not prove a particular scenario distribution, penalty, or algorithm is valid. |
+
+## Frequency is not validity
+
+- [observed] Search/heuristic methods appear across all ten selected cards: recurrence/search in A, simulation/annealing/ACO/GA/DP in B, and solver/GA/CVaR/stochastic planning in C. [ev-paper-2024-a-geometry-path, p. 1; ev-paper-2024-a-dynamic-search-route, pp. 1, 16-17, 28-29; ev-paper-2024-a-objective-optimization-form, pp. 1-3; ev-paper-2024-b-multistage-simulation, p. 1; ev-paper-2024-b-aco-ga-monte-carlo, pp. 1-4; ev-paper-2024-b-production-decision-design, p. 1; ev-paper-2024-c-optimization-planting, p. 1; ev-paper-2024-c-differential-ga-planting, p. 1; ev-paper-2024-c-ga-planting, pp. 1-3; ev-paper-2024-c-stochastic-planting, pp. 1-3]
+- [inferred] This is still a small selected corpus, so recurrence of a method is a coverage observation, not a recommendation to default to GA, ACO, or simulation. [ev-paper-2024-a-geometry-path, p. 1; ev-paper-2024-a-dynamic-search-route, p. 1; ev-paper-2024-a-objective-optimization-form, p. 1; ev-paper-2024-b-multistage-simulation, p. 1; ev-paper-2024-b-aco-ga-monte-carlo, p. 1; ev-paper-2024-b-production-decision-design, p. 1; ev-paper-2024-c-optimization-planting, p. 1; ev-paper-2024-c-differential-ga-planting, p. 1; ev-paper-2024-c-ga-planting, p. 1; ev-paper-2024-c-stochastic-planting, p. 1]
+- [expert-rule] Select a method after writing the state/decision variables, governing relation, constraints, objective, and a simpler feasible baseline; then demonstrate why the extra search or stochastic layer changes a decision-relevant outcome.
+
+## Abstract, figures, and improvement patterns
+
+- [observed] All ten abstracts use a problem-to-model-to-solution-to-reported-output progression, although the degree of numerical detail differs. [ev-paper-2024-a-geometry-path, p. 1; ev-paper-2024-a-dynamic-search-route, p. 1; ev-paper-2024-a-objective-optimization-form, p. 1; ev-paper-2024-b-multistage-simulation, p. 1; ev-paper-2024-b-aco-ga-monte-carlo, p. 1; ev-paper-2024-b-production-decision-design, p. 1; ev-paper-2024-c-optimization-planting, p. 1; ev-paper-2024-c-differential-ga-planting, p. 1; ev-paper-2024-c-ga-planting, p. 1; ev-paper-2024-c-stochastic-planting, p. 1]
+- [observed] Explicit validation/sensitivity or evaluation sections were located in seven cards: two A, three B, and two C. [ev-paper-2024-a-dynamic-search-route, pp. 13, 16-17, 26, 28-29; ev-paper-2024-a-objective-optimization-form, pp. 16-17, 28-29; ev-paper-2024-b-multistage-simulation, pp. 15, 21; ev-paper-2024-b-aco-ga-monte-carlo, pp. 20-22; ev-paper-2024-b-production-decision-design, pp. 21-23; ev-paper-2024-c-optimization-planting, pp. 18, 27; ev-paper-2024-c-differential-ga-planting, p. 42]
+- [observed] Figure purposes were identified in six cards: geometry/state explanation in A, decision-flow explanation in B, and constraint/plan/scenario comparison in C; figure-level purposes in the remaining four cards were left unverified rather than inferred. [ev-paper-2024-a-geometry-path, pp. 2-4; ev-paper-2024-a-objective-optimization-form, pp. 2-3; ev-paper-2024-b-aco-ga-monte-carlo, pp. 3, 20-22; ev-paper-2024-c-optimization-planting, pp. 1-3, 18, 27; ev-paper-2024-c-ga-planting, pp. 1-3; ev-paper-2024-c-stochastic-planting, pp. 1-3, 15-22]
+- [expert-rule] A figure is useful when it resolves a geometry/state, decision-flow, or plan/risk question, not merely because a paper has many figures.
+- [expert-rule] Treat an “improvement” as a testable change to an identified limitation (for example, a missing constraint, uncertainty source, or numerical check), with a fixed baseline and the same unit conventions.
+
+## A-problem focus: mechanism and disagreement
+
+- [observed] All three A papers start with equal-pitch spiral geometry, linked-rigid-bench relations, collision constraints, tangent-turnaround geometry, and a speed cap. [ev-paper-2024-a-geometry-path, pp. 1-4; ev-paper-2024-a-dynamic-search-route, p. 1; ev-paper-2024-a-objective-optimization-form, pp. 1-3]
+- [observed] Their collision/numerical strategies differ: geometry-path reduces the check to selected corners and handle lines, dynamic-search brackets/bisects a corner-to-line collision predicate and uses particle swarm/ternary search, while objective-optimization uses rectangular separating-axis tests and reports sensitivity/model checks. [ev-paper-2024-a-geometry-path, pp. 1, 4; ev-paper-2024-a-dynamic-search-route, pp. 1, 13, 16-17, 26, 28-29; ev-paper-2024-a-objective-optimization-form, pp. 1-3, 16-17, 28-29]
+- [observed] The objective-optimization abstract reports a maximum speed in `cm/s`, while its stated problem convention lists leader speed in `m/s`; this is recorded as a source inconsistency, not normalized by this corpus. [ev-paper-2024-a-objective-optimization-form, pp. 1-3]
+- [observed] The dynamic-search A paper independently reports the same 0.450337 m pitch scale and a 1.246266 m/s speed result after its own collision/search construction. [ev-paper-2024-a-dynamic-search-route, pp. 1, 16-17, 28-29]
+- [expert-rule] For geometry mechanisms, verify dimensions/units at input, governing equations, stopping condition, and reported output; test limiting configurations and run an independent full-geometry collision check near the claimed optimum.
+
+## Saturation and limitations
+
+- [observed] This is complete coverage of the ten user-selected local PDFs, not saturation over the larger CUMCM literature. [ev-paper-2024-a-geometry-path, pp. 1-45; ev-paper-2024-a-dynamic-search-route, pp. 1-58; ev-paper-2024-a-objective-optimization-form, pp. 1-62; ev-paper-2024-b-multistage-simulation, pp. 1-70; ev-paper-2024-b-aco-ga-monte-carlo, pp. 1-28; ev-paper-2024-b-production-decision-design, pp. 1-37; ev-paper-2024-c-optimization-planting, pp. 1-49; ev-paper-2024-c-differential-ga-planting, pp. 1-61; ev-paper-2024-c-ga-planting, pp. 1-45; ev-paper-2024-c-stochastic-planting, pp. 1-58]
+- [observed] The alternate renderer's missing CJK glyphs limits visual equation/table inspection for five papers, but PDFKit direct extraction is readable and their method claims are included. [ev-paper-2024-a-dynamic-search-route, p. 1; ev-paper-2024-b-multistage-simulation, p. 1; ev-paper-2024-b-production-decision-design, p. 1; ev-paper-2024-c-differential-ga-planting, p. 1; ev-paper-2024-c-stochastic-planting, p. 1]
+- [expert-rule] Do not turn unverified formula/table visual detail into a mandatory method rule; obtain a clean visual confirmation before expanding evidence beyond clearly extracted prose.

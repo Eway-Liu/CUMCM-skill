@@ -1,4 +1,4 @@
 interface:
-  display_name: "CUMCM Thesis"
-  short_description: "Write and audit evidence-traceable CUMCM papers"
-  default_prompt: "Use $cumcm-thesis to draft this section from the verified model, result, and figure manifests."
+  display_name: "CUMCM 论文写作"
+  short_description: "撰写与审查证据可追溯的 CUMCM 论文"
+  default_prompt: "使用 $cumcm-thesis，根据已验证的模型总结、结果清单和图表清单撰写本节。"

@@ -1,20 +1,20 @@
-# Assumptions, notation and model exposition
+# 模型假设、符号与模型表述
 
-## Assumptions
+## 模型假设
 
-Keep only assumptions that are necessary, simplify the model, and have a plausible basis. For each material assumption, record: necessity, supporting basis, affected equation/constraint, likely bias if violated, and an available check or sensitivity test. Remove common knowledge and statements unused by equations or validation. If no check is currently possible, mark the assumption unverified and bound the affected conclusion.
+只保留建模所必需、能够简化模型且具有合理依据的假设。对每项重要假设，记录其必要性、支持依据、受影响的方程或约束、假设不成立时可能造成的偏差，以及可执行的检验或灵敏度分析。删除常识性陈述，以及未被方程或验证使用的假设。若目前无法检验，应将该假设标为“未验证”，并限定受其影响的结论范围。
 
-## Notation
+## 符号说明
 
-- One symbol has one meaning; define it at first use.
-- Keep scalar, vector, matrix, index, random-variable and estimator conventions consistent.
-- State units and index ranges.
-- Do not expose program variable names as mathematical notation.
+- 一个符号只表示一个含义，并在首次出现时定义。
+- 标量、向量、矩阵、下标、随机变量和估计量的记号约定应保持一致。
+- 注明单位和下标取值范围。
+- 不要直接把程序变量名当作数学符号。
 
-## Model establishment
+## 模型建立
 
-Present reality -> mathematical definition -> derivation -> model equation -> variable meaning. Equations need connective reasoning; do not stack formulas without explaining why each follows.
+按照“现实问题 -> 数学定义 -> 推导过程 -> 模型方程 -> 变量含义”的顺序表述。方程之间必须有承接推理，不能只堆叠公式而不解释各式为何成立。
 
-## Solution description
+## 求解过程
 
-Name the solver/algorithm, parameters, initial conditions, software, seed when relevant, tolerance, stopping condition and repeated-run protocol. Replace “用 Python 求解得到” with enough detail to reproduce the result. Do not claim reproducibility when code, data or environment is missing.
+说明求解器或算法、参数、初始条件、软件、随机种子（如适用）、容差、停止条件和重复运行方案。用足以复现结果的细节替代“用 Python 求解得到”。缺少代码、数据或运行环境时，不得声称结果可以复现。

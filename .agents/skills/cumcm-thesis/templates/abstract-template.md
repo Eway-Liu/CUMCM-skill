@@ -1,14 +1,13 @@
-# Abstract evidence slots
+# 摘要证据槽位
 
-Use these slots to draft one cohesive paragraph; do not print the slot labels in the final paper.
+使用以下槽位组织一个连贯段落；最终论文中不要输出槽位名称。
 
-- Real problem and overall objective: `[来自 PROBLEM BRIEF]`
-- Shared structure/dependency: `[来自 QUESTION GRAPH]`
-- Baseline and main method choice: `[来自 MODEL SUMMARY]`
-- Targeted improvement and defect addressed: `[来自 ablation/validation artifact；若无则删除]`
-- Key result: `[由 results.json 的 <key> 写入，单位：<unit>]`
-- Validation/robustness evidence: `[由 metrics.json 或 scenario.csv 的 <key> 写入]`
-- Practical conclusion and validity boundary: `[由已验证结果和 limitations 写入]`
+- 实际问题与总体目标：`[来自 PROBLEM BRIEF]`
+- 共用结构或依赖关系：`[来自 QUESTION GRAPH]`
+- 基线方法与主要方法选择：`[来自 MODEL SUMMARY]`
+- 定向改进及其针对的缺陷：`[来自消融实验或验证结果文件；若无则删除]`
+- 关键结果：`[由 results.json 的 <key> 写入，单位：<unit>]`
+- 验证或鲁棒性证据：`[由 metrics.json 或 scenario.csv 的 <key> 写入]`
+- 实际结论与有效性边界：`[由已验证结果和局限性写入]`
 
-If a slot has no evidence, leave an explicit artifact-key placeholder in the blueprint or omit the claim. Never replace it with a plausible number or generic “improved” statement.
-
+若某个槽位缺少证据，应在写作蓝图中保留明确的结果文件键占位符，或删除相应结论。不得用看似合理的数字或笼统的“有所改进”代替。

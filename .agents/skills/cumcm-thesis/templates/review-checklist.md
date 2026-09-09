@@ -1,22 +1,22 @@
-# Thesis review ledger
+# 论文审查台账
 
-| Claim/number/figure | Source artifact and key | Evidence state | Unit/symbol check | Limit, counterexample or reversal condition | Text agrees | Action |
+| 结论/数值/图形 | 来源文件及结果键 | 证据状态 | 单位/符号检查 | 边界、反例或反转条件 | 文图表一致 | 待办事项 |
 |---|---|---|---|---|---|---|
 
-For every material assumption, append:
+对每项重要假设，附加以下记录：
 
-| Assumption | Why needed | Supporting basis | Affected relation and violation bias | Check/sensitivity | Recalibration action |
+| 假设 | 必要性 | 支持依据 | 受影响的关系及违反假设时的偏差 | 检验/灵敏度分析 | 重新校准措施 |
 |---|---|---|---|---|---|
 
-Write `unverified` for missing basis or checks; the empty field is itself an unresolved action.
+缺少依据或检验时填写“`未验证`”；空白字段本身即表示存在尚未解决的事项。
 
-Final checks:
+最终检查：
 
-- Every subquestion has method, result, interpretation and conclusion.
-- Every key number resolves to program output or a cited source.
-- Model equations match implementation and parameter values.
-- Figures use current results and text interprets them correctly.
-- Units, symbols, assumptions, precision and references are consistent.
-- Accuracy, robustness and innovation claims have executed evidence.
-- Material assumptions record necessity/basis, affected relation or bias, and a check; unsupported assumptions bound the conclusion.
-- Failed or unverified items are disclosed, not silently passed.
+- 每个子问题都有明确的方法、结果、解释和结论。
+- 每个关键数值都能追溯至程序输出或已引用来源。
+- 模型方程与程序实现及参数取值一致。
+- 图形使用当前结果，正文对图形的解释正确。
+- 单位、符号、假设、精度和参考文献保持一致。
+- 对准确性、鲁棒性和创新性的声称都有已执行的证据。
+- 每项重要假设都记录必要性或依据、受影响的关系或偏差，以及相应检验；缺乏支持的假设应限定结论范围。
+- 明确披露检查失败或未验证的事项，不得默认通过。

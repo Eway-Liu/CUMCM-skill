@@ -1,22 +1,21 @@
-# Model section evidence map
+# 模型章节证据映射
 
-## Why this model fits
+## 模型适用性
 
-`[problem feature -> mathematical consequence -> chosen structure]`
+`[问题特征 -> 数学影响 -> 所选模型结构]`
 
-## Definitions and derivation
+## 定义与推导
 
-`[symbols/units]` -> `[equations]` -> `[constraint/parameter meaning]`
+`[符号/单位]` -> `[方程]` -> `[约束/参数含义]`
 
-## Solution and reproducibility
+## 求解与可复现性
 
-`[algorithm, parameters, seed/tolerance/stopping rule, output path]`
+`[算法、参数、随机种子/容差/停止条件、输出路径]`
 
-## Verification and result
+## 验证与结果
 
-`[baseline/check]` -> `[artifact key and unit]` -> `[real-world interpretation]`
+`[基线/检验]` -> `[结果文件键与单位]` -> `[现实意义]`
 
-## Scope
+## 适用范围
 
-`[assumption -> consequence -> validity boundary -> targeted improvement]`
-
+`[假设 -> 后果 -> 有效性边界 -> 定向改进]`

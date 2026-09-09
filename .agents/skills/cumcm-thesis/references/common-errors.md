@@ -1,17 +1,17 @@
-# Common writing errors
+# 常见写作错误
 
-| Error | Correction |
+| 错误 | 改正方式 |
 |---|---|
-| Abstract presupposes a generic four-stage method | Follow the actual question graph and verified outputs |
-| Problem restatement copies the prompt | Translate to mathematical objects, inputs, outputs and constraints |
-| Analysis says only “建立模型” | Connect an observed feature to a modeling consequence |
-| Assumptions are filler | Keep only assumptions used by equations or validation |
-| Formulas are stacked without logic | Explain definition, derivation and meaning between equations |
-| “Python gives the result” | State solver, parameters, tolerance, seed and artifact |
-| Text recites the table | Quantify a comparison and explain its real meaning |
-| Ratio is reported as percentage improvement | Recompute `(new - old) / old` from the source artifact |
-| Prose, table and figure disagree | Stop and resolve the artifact keys before drafting a conclusion |
-| Convergence or parameter paths are called validation | Limit them to solver behavior; require separate accuracy, sensitivity and robustness evidence |
-| Generic strengths/limitations | Name the mechanism, consequence and scope |
-| Missing numbers are guessed | Use an artifact-key placeholder |
-| Model stacking is called innovation | Require a named defect and ablation evidence |
+| 摘要预设通用的四阶段方法 | 遵循实际问题依赖图和已验证输出 |
+| 问题重述照抄题目 | 转化为数学对象、输入、输出和约束 |
+| 问题分析只写“建立模型” | 将观察到的问题特征与建模影响相联系 |
+| 用假设凑篇幅 | 只保留方程或验证实际使用的假设 |
+| 公式堆叠而缺少逻辑 | 在方程之间说明定义、推导和含义 |
+| 只写“用 Python 求解得到” | 说明求解器、参数、容差、随机种子和结果文件 |
+| 正文逐项复述表格 | 量化比较并解释其现实含义 |
+| 把比值当作百分比增幅 | 根据源结果文件重新计算 `(new - old) / old` |
+| 正文、表格和图形相互矛盾 | 先核对并统一结果键，再撰写结论 |
+| 把收敛曲线或参数路径称为模型验证 | 仅将其用于说明求解器行为；准确性、灵敏度和鲁棒性需要独立证据 |
+| 优点或局限性表述空泛 | 明确具体机制、后果和适用范围 |
+| 猜测缺失数值 | 使用结果文件键占位符 |
+| 把模型堆叠称为创新 | 指明基线缺陷，并提供消融实验证据 |

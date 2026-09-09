@@ -1,18 +1,17 @@
-# Paper structure
+# 论文结构
 
-Organize around the reader's reasoning, not the order work happened:
+围绕读者的推理过程组织论文，而不是按实际工作发生的时间顺序叙述：
 
-1. Abstract and keywords
-2. Problem restatement: mathematical objects, inputs, outputs and constraints
-3. Problem analysis: why each question has its stated structure and how questions depend on one another
-4. Necessary assumptions with scope and likely bias
-5. Notation and units
-6. Model establishment: reality -> definitions -> derivation -> equations -> interpretation
-7. Solution method: algorithm, parameters, initial values, seed/tolerance/stopping rules and artifacts
-8. Verification, sensitivity and robustness
-9. Results and real-world interpretation
-10. Specific strengths, limitations and applicability
-11. References and reproducibility appendix as required
+1. 摘要与关键词
+2. 问题重述：数学对象、输入、输出和约束
+3. 问题分析：各问为何具有相应结构，以及各问之间如何依赖
+4. 必要的模型假设，包括适用范围和可能偏差
+5. 符号说明与单位
+6. 模型建立：现实问题 -> 数学定义 -> 推导过程 -> 模型方程 -> 结果解释
+7. 求解方法：算法、参数、初值、随机种子、容差、停止条件和结果文件
+8. 模型验证、灵敏度分析与鲁棒性分析
+9. 结果及其现实意义
+10. 具体的优点、局限性与适用范围
+11. 参考文献，以及题目要求的可复现性附录
 
-Merge or split sections when the question graph warrants it. A shared mechanism may be established once and reused; independent subquestions may need separate model sections. Ensure every question has an easy-to-find method, result, interpretation and conclusion.
-
+根据问题依赖图合并或拆分章节。共用机制可以集中建立后重复使用；相互独立的子问题则可能需要单独的模型章节。确保每一问的方法、结果、解释和结论都便于查找。

@@ -1,25 +1,24 @@
-# Abstract and problem analysis
+# 摘要与问题分析
 
-## Abstract
+## 摘要
 
-Use a cohesive evidence chain:
+采用连贯的证据链：
 
 ```text
-overall real problem and objective
--> shared mathematical structure or dependency
--> method choices tied to that structure
--> targeted extension tied to a baseline defect
--> verified key results with units
--> validation and practical conclusion
+总体实际问题与目标
+-> 共用数学结构或依赖关系
+-> 与该结构对应的方法选择
+-> 针对基线缺陷的定向改进
+-> 含单位的已验证关键结果
+-> 验证结论与实际意义
 ```
 
-Adapt the number and order of sentences to the actual question graph. Avoid mechanical repetition of “针对问题一/二/三/四”. Do not list interchangeable model families or assume every four-question problem follows data cleaning -> prediction -> optimization -> robustness.
+根据实际问题依赖图调整句子数量与顺序。避免机械重复“针对问题一/二/三/四”，不要罗列可以互换的模型名称，也不要假定所有四问问题都遵循“数据清洗 -> 预测 -> 优化 -> 鲁棒性”的固定流程。
 
-If verified results are absent, write a blueprint that names the missing artifact rather than claiming “提升/降低/更优”. Example placeholder: `[由 outputs/metrics.json 的 test_rmse 写入，单位：mm]`.
+若缺少已验证结果，应编写明确指出缺失结果文件的写作蓝图，不得声称“提升”“降低”或“更优”。占位符示例：`[由 outputs/metrics.json 的 test_rmse 写入，单位：mm]`。
 
-## Problem restatement and analysis
+## 问题重述与分析
 
-Restatement translates reality into mathematical objects, inputs, outputs and constraints; it does not copy the prompt.
+问题重述应将现实情境转化为数学对象、输入、输出和约束，而不是照抄题目。
 
-Analysis answers “why this formulation and route?” Use visible evidence: data pattern, physical relation, decision structure, constraint type, uncertainty or question dependency. Each paragraph should connect a problem feature to a modeling consequence. “根据题意建立模型” contains no analysis.
-
+问题分析要回答“为什么采用这种表述和求解路线”。依据应当清晰可见，例如数据规律、物理关系、决策结构、约束类型、不确定性或问题间的依赖关系。每一段都应把问题特征与相应的建模影响联系起来；“根据题意建立模型”本身不构成分析。

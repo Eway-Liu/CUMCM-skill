@@ -1,11 +1,10 @@
-# Academic style
+# 学术表达
 
-- Lead paragraphs with the point being established.
-- Prefer concrete subjects and verbs; remove “显然”“不难发现” unless the step truly is immediate.
-- Use consistent terms for the same object and avoid promotional adjectives.
-- State causality only when design and evidence support it; otherwise use association or predictive language.
-- Attach numbers to units, denominators, scenarios and result keys.
-- Use transition sentences to explain why the next model component is needed.
-- Keep limitations specific and proportionate; do not add generic future-work lists.
-- Summarize sources in original language and cite them; do not imitate excellent-paper phrasing.
-
+- 段首先写本段要论证的要点。
+- 优先使用明确的主语和动词；除非推导确实可以立即得到，否则删除“显然”“不难发现”等表述。
+- 同一对象始终使用一致的术语，避免宣传性形容词。
+- 只有研究设计和证据足以支持时才陈述因果关系，否则使用相关性或预测性表述。
+- 数值必须同时注明单位、分母、适用情景和结果键。
+- 用过渡句说明为什么需要引入下一个模型组成部分。
+- 局限性应具体且与证据相称，不要附加泛化的未来工作清单。
+- 用自己的语言概括并引用资料，不要模仿优秀论文的独特措辞。

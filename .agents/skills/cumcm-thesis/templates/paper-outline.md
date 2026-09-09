@@ -1,15 +1,14 @@
-# Paper outline
+# 论文提纲
 
-## Abstract and keywords
-## Problem restatement
-## Problem analysis and question dependencies
-## Assumptions
-## Notation and units
-## Model establishment and solution
-## Verification, sensitivity and robustness
-## Results and interpretation
-## Strengths, limitations and applicability
-## References and reproducibility appendix
+## 摘要与关键词
+## 问题重述
+## 问题分析与各问依赖关系
+## 模型假设
+## 符号说明与单位
+## 模型建立与求解
+## 模型验证、灵敏度分析与鲁棒性分析
+## 结果与解释
+## 模型优点、局限性与适用范围
+## 参考文献与可复现性附录
 
-Adapt section order to the question graph; do not force one section per question when a shared model is clearer.
-
+根据问题依赖图调整章节顺序；如果采用共用模型更清晰，不要强制每一问单独设置一个章节。

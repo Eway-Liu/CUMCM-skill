@@ -1,15 +1,15 @@
-# LaTeX style
+# LaTeX 排版规范
 
-- Use `equation` for one numbered relation and `align` for multi-line derivations; align meaningful equality/inequality signs.
-- Use `cases` for piecewise definitions and standard matrix environments for vectors/matrices.
-- Define symbols in prose or a compact notation table; include units outside math symbols where practical.
-- Use `\label` and `\ref`/`\eqref`; do not hardcode equation, figure or table numbers.
-- Put table units in column headers and captions; use consistent significant digits.
-- Put figure meaning and context in the caption rather than repeating a decorative chart title.
-- Escape text characters and use `\mathrm{}`/`\text{}` for words inside equations.
-- Keep displayed equations syntactically complete and directly insertable; do not mix Markdown math fences into LaTeX source.
+- 单个带编号关系式使用 `equation`，多行推导使用 `align`；在有实际意义的等号或不等号处对齐。
+- 分段定义使用 `cases`，向量和矩阵使用标准矩阵环境。
+- 在正文或紧凑的符号表中定义符号；条件允许时，将单位写在数学符号之外。
+- 使用 `\label` 和 `\ref`/`\eqref` 交叉引用，不要硬编码公式、图或表的编号。
+- 表格单位写在列标题或表注中，并统一有效数字位数。
+- 图注应交代图形含义和情境，不要重复装饰性图标题。
+- 对文本特殊字符进行转义，公式中的文字使用 `\mathrm{}` 或 `\text{}`。
+- 展示公式必须语法完整且可直接插入 LaTeX 源文件；不要在 LaTeX 源码中混用 Markdown 数学围栏。
 
-Example:
+示例：
 
 ```latex
 \begin{equation}
@@ -18,4 +18,3 @@ Example:
   \label{eq:allocation}
 \end{equation}
 ```
-

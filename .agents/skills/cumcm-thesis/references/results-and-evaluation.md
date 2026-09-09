@@ -1,23 +1,23 @@
-# Results and model evaluation
+# 结果分析与模型评价
 
-## Result analysis
+## 结果分析
 
-Do not repeat every table cell. State the comparison or change, quantify it with a traceable key, give the unit/denominator, and explain what it means in the real problem. Distinguish statistical, numerical and practical significance.
+不要逐项复述表格。应先说明比较关系或变化，再用可追溯的结果键进行量化，注明单位或分母，并解释其在实际问题中的含义。区分统计显著性、数值显著性和实际意义。
 
-For each conclusion, preserve a compact **claim -> evidence -> limit** chain. Ask four questions: which subquestion does this answer; how does it compare with the baseline, theory or reality; is the difference practically meaningful; and under what observed or plausible condition would it reverse or stop applying? A reversal condition is a boundary to test, not permission to invent a threshold.
+每项结论都应保留简洁的“**结论 -> 证据 -> 边界**”链条，并回答四个问题：该结论回答了哪一问；与基线、理论或实际情况相比如何；差异是否具有实际意义；在什么已观察到或合理可能出现的条件下，结论会反转或不再适用？反转条件是需要检验的边界，不能据此虚构阈值。
 
-Recompute percentage change as `(new - old) / old`; do not call the ratio `new / old` an increase. Resolve disagreements among abstract, prose, table labels and figure annotations before writing a conclusion. An optimizer parameter path is not a sensitivity experiment, and a 3D trajectory illustration is not geometric or numerical validation.
+百分比变化应按 `(new - old) / old` 重新计算，不能把比值 `new / old` 称为增幅。撰写结论前，必须先解决摘要、正文、表格标签和图中标注之间的不一致。优化器的参数迭代路径不是灵敏度实验，三维轨迹示意图也不构成几何或数值验证。
 
-## Strengths
+## 模型优点
 
-Name the mechanism that creates the advantage. Example: an explicit capacity constraint makes the transport plan executable because no route exceeds available load; this is stronger than “the model is reasonable.”
+说明产生优势的具体机制。例如：“显式容量约束保证所有路线均不超过可用运力，因此运输方案可以执行”，比“模型合理”更有说服力。
 
-## Limitations
+## 模型局限性
 
-Name the assumption, its consequence and bias direction, and the affected validity range. State which data or test could challenge it and what must be recalibrated before deployment. Example: deterministic travel time can make tight schedules infeasible under peak congestion and can overstate resource utilization.
+指出具体假设、造成的后果、偏差方向和受影响的有效范围；说明哪些数据或检验可能推翻该假设，以及实际应用前需要重新校准什么。例如：采用确定性行程时间，可能使紧凑排程在高峰拥堵时无法执行，并高估资源利用率。
 
-## Improvements
+## 改进方向
 
-Target the named limitation: time-dependent travel times, scenario/stochastic or robust optimization, safety margins, new measurements, or boundary validation. Do not append unrelated advanced algorithms.
+改进应直接针对已指出的局限性，例如引入时变行程时间、情景优化、随机优化或鲁棒优化、安全裕度、新增测量数据或边界验证。不要附加与现有局限无关的高级算法。
 
-Claims of accuracy require held-out/structural checks; robustness requires executed perturbations/scenarios; innovation requires a named baseline defect and ablation.
+声称模型准确，必须有留出检验或结构性检验；声称模型鲁棒，必须实际执行扰动实验或情景实验；声称具有创新性，必须指出基线方法的具体缺陷并提供消融实验。

@@ -60,6 +60,12 @@ Key results:
 Limitations:
 ```
 
+## RESULT_MANIFEST
+
+Producer: `cumcm-modeling`. Consumers: `cumcm-global`, `cumcm-visualization`, and `cumcm-thesis`.
+
+Use the machine-readable [result manifest schema](../../../cumcm-shared/schemas/result-manifest.schema.json). Each artifact has a stable ID, path, format, SHA-256 and verification state. Metrics and validation records reference artifact IDs; uncertainty identifies its representation and backing artifact when present. Missing evidence stays `unverified` rather than receiving a fabricated path or hash.
+
 ## FIGURE REQUEST
 
 ```text
@@ -70,6 +76,12 @@ Variables and units:
 Recommended plot (optional):
 Output format:
 ```
+
+## FIGURE_MANIFEST
+
+Producer: `cumcm-visualization`. Consumers: `cumcm-global` and `cumcm-thesis`.
+
+Use the machine-readable [figure manifest schema](../../../cumcm-shared/schemas/figure-manifest.schema.json). It binds the figure purpose and main message to hashed source result artifacts, visual encodings with units, exported files, and an explicit audit. A failed or incomplete audit remains visible in `audit.status` and `limitations`.
 
 ## FINAL CONSISTENCY REVIEW
 

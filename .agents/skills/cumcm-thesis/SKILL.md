@@ -9,7 +9,7 @@ Write so a judge can quickly see why the model fits, what the verified result is
 
 ## Input gate
 
-Require the relevant `PROBLEM BRIEF`, verified `MODEL SUMMARY`, result manifest, and figure manifest. Preserve their definitions, units, assumptions and limitations. If evidence is missing, use an explicit traceability placeholder such as `[由 results.json 的 q2.rmse 写入]`; never invent a number, method, validation result or figure message.
+Require the relevant `PROBLEM BRIEF`, verified `MODEL SUMMARY`, schema-valid [RESULT_MANIFEST](../../cumcm-shared/schemas/result-manifest.schema.json), and schema-valid [FIGURE_MANIFEST](../../cumcm-shared/schemas/figure-manifest.schema.json). Preserve their definitions, units, assumptions and limitations. If evidence is missing, use an explicit traceability placeholder such as `[由 results.json 的 q2.rmse 写入]`; never invent a number, method, validation result or figure message.
 
 ## Workflow
 

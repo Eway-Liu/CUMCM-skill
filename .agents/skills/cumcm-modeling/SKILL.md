@@ -37,6 +37,6 @@ For physical, engineering, geometric, or differential-equation tasks, read [mech
 
 ## Output contract
 
-Return a `MODEL SUMMARY` with: problem/objective; variables/units; assumptions; baseline; main model/equations; algorithm/parameters; upstream handoffs consumed; uncertainty output; validation performed, including end-to-end evidence when applicable; saved result artifacts; key results; limitations. Use [modeling plan](templates/modeling-plan.md), [model comparison](templates/model-comparison.md), or [experiment plan](templates/experiment-plan.md) as needed.
+Return a `MODEL SUMMARY` with: problem/objective; variables/units; assumptions; baseline; main model/equations; algorithm/parameters; upstream handoffs consumed; uncertainty output; validation performed, including end-to-end evidence when applicable; saved result artifacts; key results; limitations. Also produce a `RESULT_MANIFEST` conforming to the [JSON Schema](../../cumcm-shared/schemas/result-manifest.schema.json); every reported metric and validation claim must resolve to a versioned, hashed artifact or remain explicitly unverified. Use [modeling plan](templates/modeling-plan.md), [model comparison](templates/model-comparison.md), or [experiment plan](templates/experiment-plan.md) as needed.
 
-Do not select manuscript wording or publication styling. Send verified results and units to `cumcm-visualization`; send the completed `MODEL SUMMARY` to `cumcm-thesis`.
+Do not select manuscript wording or publication styling. Send the verified `RESULT_MANIFEST` and units to `cumcm-visualization`; send it with the completed `MODEL SUMMARY` to `cumcm-thesis`.

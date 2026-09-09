@@ -12,4 +12,4 @@ Use for physical, engineering, geometry, kinematics and differential-equation pr
 8. Validate in this order: hand-checkable configuration; dimensional and conservation checks; limiting/extreme cases; boundary cases near active constraints; grid/tolerance refinement; parameter perturbation.
 9. State every realism-reducing assumption and its likely bias. Add complexity only when an observed defect matters to the objective.
 
-The three local 2024 A papers support the reusable pattern “path/geometry -> linked-state propagation -> collision/constraint test -> constrained search”; their reduced collision tests still require boundary checks before transfer. See `../cumcm/references/a-problem-patterns.md` for evidence locators.
+The three inspected 2024 A papers support the reusable pattern “path/geometry -> linked-state propagation -> collision/constraint test -> constrained search”; their reduced collision tests still require boundary checks before transfer. See [A-problem patterns](../../../cumcm-shared/references/a-problem-patterns.md) for the frozen evidence locators.

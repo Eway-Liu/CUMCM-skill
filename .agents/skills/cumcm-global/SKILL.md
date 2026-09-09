@@ -1,6 +1,6 @@
 ---
 name: cumcm-global
-description: Use when a CUMCM or similar mathematical modeling competition task needs coordination across problem analysis, modeling, implementation, visualization, paper writing, or final review.
+description: Use when a CUMCM project spans multiple specialist stages, needs question-dependency routing, or requires final cross-artifact consistency review; not for a focused modeling, visualization, or paper-writing request.
 ---
 
 # CUMCM Global Orchestrator
@@ -17,16 +17,16 @@ Create a `PROBLEM BRIEF` and `QUESTION GRAPH` using [contracts](references/contr
 
 Read [question dependencies](references/question-dependency.md) when questions share parameters, data, code, or outputs. Use [competition workflow](references/competition-workflow.md) for a full contest or when sequencing is unclear.
 
-When the graph has a hard model-to-model edge, require a named `UPSTREAM HANDOFF` and route its design to [hybrid model chains](../cumcm-modeling/references/hybrid-model-chains.md). Use stage-plus-chain retrieval only when historical evidence is relevant; the orchestrator owns routing, while `cumcm-modeling` owns propagation and validation details.
+When the graph has a hard model-to-model edge, require a named `UPSTREAM HANDOFF` and route its design to [hybrid model chains](../cumcm-modeling/references/hybrid-model-chains.md). The orchestrator owns routing, while `cumcm-modeling` owns propagation and validation details.
 
 ## Routing
 
-- Invoke `cumcm-modeling` for data audit, mathematical formulation, model selection, algorithms, Python implementation, validation, sensitivity, robustness, or uncertainty.
-- Invoke `cumcm-visualization` only with a `FIGURE REQUEST` whose question and main message are known.
-- Invoke `cumcm-thesis` only with verified problem, model, result, and figure inputs; it must not recompute or invent them.
+- Invoke `cumcm-modeling` for data audit, mathematical formulation, model selection, algorithms, Python implementation, validation, sensitivity, robustness, or uncertainty. Require its `MODEL SUMMARY` and schema-valid `RESULT_MANIFEST` before downstream use.
+- Invoke `cumcm-visualization` only with a `FIGURE REQUEST` whose question and main message are known; require a schema-valid `FIGURE_MANIFEST` as its handoff.
+- Invoke `cumcm-thesis` only with verified problem, model, `RESULT_MANIFEST`, and `FIGURE_MANIFEST` inputs; it must not recompute or invent them.
 - Keep the current stage when the user requests a focused task. Do not restart the entire workflow unnecessarily.
 
-Use structure-aware corpus retrieval only as evidence support: `../cumcm/scripts/search_cases.py`. A retrieved case is an analogy to inspect, never a model prescription. Read the [bidirectional structure-model index](../cumcm/references/bidirectional-index.md) when candidate routing needs corpus-backed use/avoid conditions. Read `../cumcm/references/excellent-paper-patterns.md` or `a-problem-patterns.md` only when historical evidence is relevant.
+Read the [bidirectional structure-model index](../../cumcm-shared/references/bidirectional-index.md) when candidate routing benefits from distilled use/avoid conditions. Read [excellent-paper patterns](../../cumcm-shared/references/excellent-paper-patterns.md) or [A-problem patterns](../../cumcm-shared/references/a-problem-patterns.md) only when those fixed historical lessons are relevant; do not treat them as a live corpus or retrieve new papers.
 
 ## Hard gates
 
@@ -42,7 +42,7 @@ When a gate fails, state the missing evidence and return to the producing stage.
 
 ## Final consistency review
 
-Before final delivery, produce `FINAL CONSISTENCY REVIEW`. Check model vs code, code vs saved result, result vs figure, figure vs text, units, symbols, parameters, and whether each conclusion has evidence. Use [final checklist](references/final-checklist.md). Report unresolved items as blockers or limitations rather than marking them complete.
+Before final delivery, produce `FINAL CONSISTENCY REVIEW`. Check model vs code, code vs `RESULT_MANIFEST`, result vs `FIGURE_MANIFEST`, figure vs text, units, symbols, parameters, and whether each conclusion has evidence. Use [final checklist](references/final-checklist.md). Report unresolved items as blockers or limitations rather than marking them complete.
 
 ## Templates
 

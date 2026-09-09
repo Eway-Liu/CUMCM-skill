@@ -1,4 +1,4 @@
 interface:
   display_name: "CUMCM Global"
-  short_description: "Coordinate CUMCM modeling work and final consistency review"
+  short_description: "Coordinate multi-stage CUMCM work and cross-artifact review"
   default_prompt: "Use $cumcm-global to analyze this CUMCM problem and coordinate the required specialist stages."

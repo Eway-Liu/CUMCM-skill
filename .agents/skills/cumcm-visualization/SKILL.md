@@ -9,7 +9,7 @@ Every figure must answer a question. Visual polish cannot rescue an undefined me
 
 ## Figure gate
 
-Require a `FIGURE REQUEST` containing: purpose/question, verified data or result artifact, one-sentence main message, variables, units, output surface and format. If purpose or message is missing, return the smallest diagnostic plan needed to discover it; do not promise all-field plotting, ornamental dashboards, PCA/UMAP, 3D effects, gradients, or exhaustive chart suites.
+Require a `FIGURE REQUEST` containing: purpose/question, verified data or a schema-valid `RESULT_MANIFEST`, one-sentence main message, variables, units, output surface and format. If purpose or message is missing, return the smallest diagnostic plan needed to discover it; do not promise all-field plotting, ornamental dashboards, PCA/UMAP, 3D effects, gradients, or exhaustive chart suites.
 
 This Skill does not choose the underlying model. Ask `cumcm-modeling` for verified results or diagnostics when they are absent.
 
@@ -33,5 +33,5 @@ Extend helpers only for repeated, stable needs; one-off plots belong with the an
 
 ## Output contract
 
-Return: figure plan; plotting code or artifact; source result path; caption/main message; and a figure audit covering question answered, data/version, axes, units, scale, legend/direct labels, uncertainty, grayscale/accessibility, resolution/vector output, and text consistency. Report failed or unverified items explicitly.
+Return the figure plan and a `FIGURE_MANIFEST` conforming to the [JSON Schema](../../cumcm-shared/schemas/figure-manifest.schema.json). The manifest must bind each output hash to source result artifact IDs, encodings/units, caption/main message, and an audit covering scale, labels, uncertainty, accessibility, export quality, and text consistency. Report failed or unverified items explicitly.
 

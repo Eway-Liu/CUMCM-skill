@@ -6,18 +6,9 @@ Use this workflow only when the `QUESTION GRAPH` has a hard dependency in which 
 
 Name each producer and consumer stage. For every stage, state its input, output, assumptions, fitting boundary and validation evidence. Do not let downstream performance conceal an invalid upstream model, or reuse future information through a shared preprocessing step.
 
-## 2. Retrieve by stage and by chain
+## 2. Use only retained evidence
 
-If historical evidence is relevant, search each stage's mathematical structure and one whole-chain query:
-
-```bash
-python .agents/skills/cumcm/scripts/search_chain_cases.py \
-  --stage forecast="time series prediction rolling validation" \
-  --stage decision="mixed integer optimization uncertainty" \
-  --chain="prediction optimization uncertainty propagation"
-```
-
-Inspect the per-stage results before the deduplicated union. A stage or chain with no hit has no corpus evidence; say so rather than substituting a topic-name match.
+When the fixed shared references contain a relevant precedent, use it only as a conditional design clue. If they contain no structurally matching case, state that no retained historical evidence applies; do not search for or ingest new papers, and do not substitute a topic-name match.
 
 ## 3. Layer candidate plans
 
